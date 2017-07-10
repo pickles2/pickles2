@@ -39,16 +39,16 @@
 				padding:0;
 			}
 			.theme_welcome .theme_welcome-title{
-				color: <?php print htmlspecialchars($colors['link']); ?>;
+				color: <?= htmlspecialchars($colors['link']); ?>;
 				font-weight:bold;
 				font-size:xx-large;
 				margin:1em 0 0.5em 0;
 			}
 			.theme_welcome .theme_welcome-message{
-				color: <?php print $messageBoxSetting['main']; ?>;
-				border:2px solid <?php print $messageBoxSetting['main']; ?>;
-				background-color: <?php print $messageBoxSetting['bg']; ?>;
-				border-radius: <?php print $messageBoxSetting['radius']; ?>;
+				color: <?= $messageBoxSetting['main']; ?>;
+				border:2px solid <?= $messageBoxSetting['main']; ?>;
+				background-color: <?= $messageBoxSetting['bg']; ?>;
+				border-radius: <?= $messageBoxSetting['radius']; ?>;
 				padding:0.5em 1em;
 				max-width:680px;
 				margin:0 auto 10px auto;
@@ -74,13 +74,13 @@
 		</header>
 		<div class="theme_welcome">
 			<div class="theme_welcome-inner">
-				<p class="theme_welcome-title"><?php print $theme_top->create_src_welcome_svg(); ?></p>
+				<p class="theme_welcome-title"><?= $theme_top->create_src_welcome_svg(); ?></p>
 				<div class="theme_welcome-body clearfix">
 					<div class="theme_welcome-message">
-						<?php print $theme_top->mk_setup_test( $test_results ); ?>
+						<?= $theme_top->mk_setup_test( $test_results ); ?>
 					</div>
 					<?php if( !count($test_results) ){ ?>
-						<div class="theme_welcome-image_everyone"><img src="<?php print $px->path_plugin_files('images/everyone.png'); ?>" alt="" /></div>
+						<div class="theme_welcome-image_everyone"><img src="<?= $theme->files('images/everyone.png'); ?>" alt="" /></div>
 					<?php } ?>
 				</div>
 			</div>
