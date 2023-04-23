@@ -4,6 +4,11 @@
  */
 return call_user_func( function(){
 
+	if( is_file(__DIR__.'/../.env') ){
+		$dotenv = \Dotenv\Dotenv::createImmutable( __DIR__.'/../' );
+		$dotenv->load();
+	}
+
 	// initialize
 
 	/** コンフィグオブジェクト */
@@ -16,8 +21,21 @@ return call_user_func( function(){
 	$conf->name = 'Pickles 2';
 	/** コピーライト表記 */
 	$conf->copyright = 'Pickles Project';
-	/** ドメイン(本番環境のドメイン) */
+
+	/**
+	 * スキーマ
+	 * 本番環境のスキーマ
+	 * (例: http, https)
+	 */
+	$conf->scheme = 'https';
+
+	/**
+	 * ドメイン
+	 * 本番環境のドメイン
+	 * (例: www.example.com, 192.168.0.1, www.example.com:8080, etc...)
+	 */
 	$conf->domain = null;
+
 	/** コンテンツルートディレクトリ */
 	$conf->path_controot = '/';
 
@@ -26,12 +44,33 @@ return call_user_func( function(){
 
 	/** トップページのパス(デフォルト "/") */
 	$conf->path_top = '/';
+
 	/** パブリッシュ先ディレクトリパス */
-	$conf->path_publish_dir = '../px-files/dist/';
+	$conf->path_publish_dir = '../dist/';
+
 	/** 公開キャッシュディレクトリ */
 	$conf->public_cache_dir = '/common/px_resources/';
-	/** リソースディレクトリ(各コンテンツに対して1:1で関連付けられる)のパス */
+
+	/**
+	 * リソースディレクトリ(各コンテンツに対して1:1で関連付けられる)のパス
+	 *
+	 * 次の部品を組み合わせて、書き換え後のパスの構成規則を指定します。
+	 * - `{$dirname}` = 変換前のパスの、ディレクトリ部分
+	 * - `{$filename}` = 変換前のパスの、拡張子を除いたファイル名部分
+	 * - `{$ext}` = 変換前のパスの、拡張子部分
+	 *
+	 * または次のように、コールバックメソッドを指定します。
+	 * ```
+	 * $conf->path_files = function($path){
+	 * 	$path = preg_replace('/.html?$/s', '_files/', $path);
+	 * 	return $path;
+	 * };
+	 * ```
+	 * コールバックメソッドには、 引数 `$path` が渡されます。
+	 * これを加工して、書き換え後のパスを返してください。
+	 */
 	$conf->path_files = '{$dirname}/{$filename}_files/';
+
 	/** Contents Manifesto のパス */
 	$conf->contents_manifesto = '/common/contents_manifesto.ignore.php';
 
@@ -43,9 +82,13 @@ return call_user_func( function(){
 	 * コマンドのパスが通っていない場合は、絶対パスで設定してください。
 	 */
 	$conf->commands = new stdClass;
-	$conf->commands->php = 'php';
+	$conf->commands->php = ($_ENV['CMD_PHP'] ?? 'php');
 
-	/** php.ini のパス。主にパブリッシュ時のサブクエリで使用する。 */
+	/**
+	 * php.ini のパス
+	 *
+	 * 主にパブリッシュ時のサブクエリで使用します。
+	 */
 	$conf->path_phpini = null;
 
 
@@ -60,7 +103,7 @@ return call_user_func( function(){
 	 * 最初のファイル名と同じものとして処理します。
 	 */
 	$conf->directory_index = array(
-		'index.html'
+		'index.html',
 	);
 
 
@@ -69,7 +112,7 @@ return call_user_func( function(){
 	 *
 	 * パスのパターン別に処理方法を設定します。
 	 *
-	 * - ignore = 対象外パス。Pickles 2 のアクセス可能範囲から除外します。このパスにへのアクセスは拒絶され、パブリッシュの対象からも外されます。
+	 * - ignore = 対象外パス。Pickles 2 のアクセス可能範囲から除外します。このパスへのアクセスは拒絶され、パブリッシュの対象からも外されます。
 	 * - direct = 物理ファイルを、ファイルとして読み込んでから加工処理を通します。 (direct以外の通常の処理は、PHPファイルとして `include()` されます)
 	 * - pass = 物理ファイルを、そのまま無加工で出力します。 (デフォルト)
 	 * - その他 = extension名
@@ -86,8 +129,6 @@ return call_user_func( function(){
 		'/.htaccess' => 'ignore' ,
 		'/.px_execute.php' => 'ignore' ,
 		'/px-files/*' => 'ignore' ,
-		'*.ignore/*' => 'ignore' ,
-		'*.ignore.*' => 'ignore' ,
 		'/composer.json' => 'ignore' ,
 		'/composer.lock' => 'ignore' ,
 		'/README.md' => 'ignore' ,
@@ -97,6 +138,13 @@ return call_user_func( function(){
 		'*/.svn/*' => 'ignore' ,
 		'*/.git/*' => 'ignore' ,
 		'*/.gitignore' => 'ignore' ,
+
+		'*.ignore/*' => 'ignore' ,
+		'*.ignore.*' => 'ignore' ,
+		'*.pass/*' => 'pass' ,
+		'*.pass.*' => 'pass' ,
+		'*.direct/*' => 'direct' ,
+		'*.direct.*' => 'direct' ,
 
 		'*.html' => 'html' ,
 		'*.htm' => 'html' ,
@@ -130,22 +178,46 @@ return call_user_func( function(){
 
 	/** ファイルに適用されるデフォルトのパーミッション */
 	$conf->file_default_permission = '775';
+
 	/** ディレクトリに適用されるデフォルトのパーミッション */
 	$conf->dir_default_permission = '775';
+
 	/** ファイルシステムの文字セット。ファイル名にマルチバイト文字を使う場合に参照されます。 */
 	$conf->filesystem_encoding = 'UTF-8';
+
 	/** 出力文字エンコーディング名 */
 	$conf->output_encoding = 'UTF-8';
+
 	/** 出力改行コード名 (cr|lf|crlf) */
 	$conf->output_eol_coding = 'lf';
+
 	/** セッション名 */
 	$conf->session_name = 'PXSID';
+
 	/** セッションの有効期間 */
 	$conf->session_expire = 1800;
-	/** PX Commands のウェブインターフェイスからの実行を許可 */
-	$conf->allow_pxcommands = 0;
+
 	/** タイムゾーン */
 	$conf->default_timezone = 'Asia/Tokyo';
+
+	/**
+	 * PX Commands のウェブインターフェイスからの実行を許可
+	 *
+	 * ※ 注意 :
+	 * PXコマンドは、Pickles 2 を便利に使うためのさまざまな機能を提供します。
+	 * (例：パブリッシュ機能 `?PX=publish`)
+	 * PXコマンドはサーバー内部の情報にアクセスしたり、
+	 * サーバー上のデータを書き換えるインターフェイスを提供する場合があるため、
+	 * 第3者にアクセスされると大変キケンです。
+	 * 
+	 * Pickles 2 をインターネット上のサーバーで動かす場合には、次のことに注意してください。
+	 * 
+	 * - ウェブ制作環境として利用する場合、利用基本認証やIP制限などの処理を施し、
+	 *   一般のユーザーがアクセスできない場所に設置してください。
+	 * - または、Pickles 2 上に構築したウェブアプリケーションをサービスとして公開する場合、
+	 *   この値を 0 に設定し、PXコマンド機能を無効にしてください。(この場合でも、CLIからの実行は許可されます)
+	 */
+	$conf->allow_pxcommands = 1;
 
 
 
@@ -159,17 +231,45 @@ return call_user_func( function(){
 	 * サイトマップ読み込みの前に実行するプラグインを設定します。
 	 */
 	$conf->funcs->before_sitemap = array(
+		// px2-clover
+		\tomk79\pickles2\px2clover\register::clover(array(
+			"protect_preview" => true, // プレビューに認証を要求するか？
+		)),
+
 		// PX=clearcache
 		'picklesFramework2\commands\clearcache::register' ,
 
-		 // PX=config
+		// PX=config
 		'picklesFramework2\commands\config::register' ,
 
-		 // PX=phpinfo
+		// PX=phpinfo
 		'picklesFramework2\commands\phpinfo::register' ,
 
 		// sitemapExcel
-		'tomk79\pickles2\sitemap_excel\pickles_sitemap_excel::exec' ,
+		'tomk79\pickles2\sitemap_excel\pickles_sitemap_excel::exec('.json_encode(array(
+			// `master_format`
+			// マスターにするファイルフォーマットを指定します。
+			//   - `timestamp` = タイムスタンプが新しい方をマスターにする(デフォルト)
+			//   - `xlsx` = XLSXをマスターにする
+			//   - `csv` = CSVをマスターにする
+			//   - `pass` = 変換しない
+			// のいずれかを指定します。
+			'master_format'=>'xlsx',
+
+			// `files_master_format`
+			// ファイル名ごとにマスターにするファイルフォーマットを指定します。
+			// ここに設定されていないファイルは、 `master_format` の設定に従います。
+			'files_master_format'=>array(
+				// 'timestamp_sitemap'=>'timestamp',
+				// 'csv_master_sitemap'=>'csv',
+				// 'xlsx_master_sitemap'=>'xlsx',
+				// 'no_convert'=>'pass',
+			),
+		)).')' ,
+
+		// px2-serve
+		\tomk79\pickles2\px2serve\serve::register(),
+
 	);
 
 	/**
@@ -181,8 +281,8 @@ return call_user_func( function(){
 		// PX=api
 		'picklesFramework2\commands\api::register' ,
 
-		// PX=publish
-		'picklesFramework2\commands\publish::register' ,
+		// PX=publish (px2-publish-ex)
+		'tomk79\pickles2\publishEx\publish::register' ,
 
 		// PX=px2dthelper
 		'tomk79\pickles2\px2dthelper\main::register' ,
@@ -210,13 +310,13 @@ return call_user_func( function(){
 		'tomk79\pickles2\pathResolver\main::resolve_common_contents()' ,
 
 		// テーマ
-		'theme'=>'tomk79\pickles2\multitheme\theme::exec('.json_encode([
+		'theme'=>'tomk79\pickles2\multitheme\theme::exec('.json_encode(array(
 			'param_theme_switch'=>'THEME',
 			'cookie_theme_switch'=>'THEME',
 			'path_theme_collection'=>'../px-files/themes/',
 			'attr_bowl_name_by'=>'data-contents-area',
-			'default_theme_id'=>'pickles2'
-		]).')' ,
+			'default_theme_id'=>'pickles2',
+		)).')' ,
 
 		// Apache互換のSSIの記述を解決する
 		'picklesFramework2\processors\ssi\ssi::exec' ,
@@ -235,18 +335,18 @@ return call_user_func( function(){
 			) ,
 		)).')' ,
 
-		// output_encoding, output_eol_coding の設定に従ってエンコード変換する。
-		'picklesFramework2\processors\encodingconverter\encodingconverter::exec' ,
+		// broccoli-receive-message スクリプトを挿入
+		'tomk79\pickles2\px2dthelper\broccoli_receive_message::apply('.json_encode( array(
+			// 許可する接続元を指定
+			'enabled_origin'=>array(
+			)
+		) ).')' ,
 	);
 
 	$conf->funcs->processor->css = array(
-		// output_encoding, output_eol_coding の設定に従ってエンコード変換する。
-		'picklesFramework2\processors\encodingconverter\encodingconverter::exec' ,
 	);
 
 	$conf->funcs->processor->js = array(
-		// output_encoding, output_eol_coding の設定に従ってエンコード変換する。
-		'picklesFramework2\processors\encodingconverter\encodingconverter::exec' ,
 	);
 
 	$conf->funcs->processor->md = array(
@@ -259,7 +359,7 @@ return call_user_func( function(){
 
 	$conf->funcs->processor->scss = array(
 		// SCSS文法を処理する
-		'picklesFramework2\processors\scss\ext::exec' ,
+		'tomk79\pickles2\px2scss\scss::processor' ,
 
 		// css のデフォルトの処理を追加
 		$conf->funcs->processor->css ,
@@ -289,6 +389,16 @@ return call_user_func( function(){
 			'supply_index_filename' => false
 		)).')' ,
 
+		// output_encoding, output_eol_coding の設定に従ってエンコード変換する。
+		'picklesFramework2\processors\encodingconverter\encodingconverter::exec('.json_encode(array(
+			'ext'=>array( // 対象の拡張子。省略時はすべてのリクエストが適用される。
+				'html',
+				'htm',
+				'css',
+				'js',
+			),
+		)).')' ,
+
 	);
 
 
@@ -299,12 +409,21 @@ return call_user_func( function(){
 	/** config for Pickles 2 Desktop Tool. */
 	$conf->plugins->px2dt = new stdClass;
 
+	/**
+	 * GUIエディタのエンジンの種類
+	 * - `legacy` = 旧GUI編集ツール。(廃止)
+	 * - `broccoli-html-editor` = NodeJSで実装された broccoli-html-editor を使用。
+	 * - `broccoli-html-editor-php` = PHPで実装された broccoli-html-editor を使用。
+	 */
+	$conf->plugins->px2dt->guiEngine = 'broccoli-html-editor-php';
+
 	/** broccoliモジュールセットの登録 */
-	$conf->plugins->px2dt->paths_module_template = [
-		"PlainHTMLElements" => "../vendor/pickles2/broccoli-module-plain-html-elements/modules/",
-		"local" => "../px-files/modules/",
-		"FESS" => "../vendor/pickles2/broccoli-module-fess/modules/"
-	];
+	$conf->plugins->px2dt->paths_module_template = array(
+		// 'moduleId' => './path/to/module/',
+	);
+
+	/** プロジェクト固有のモジュールセットの格納ディレクトリ */
+	$conf->plugins->px2dt->path_module_templates_dir = "../px-files/modules/";
 
 	/** コンテンツエリアを識別するセレクタ(複数の要素がマッチしてもよい) */
 	$conf->plugins->px2dt->contents_area_selector = '[data-contents-area]';
@@ -342,6 +461,26 @@ return call_user_func( function(){
 
 	/** GUI編集リソース出力先ディレクトリ */
 	// $conf->plugins->px2dt->guieditor->path_resource_dir = '{$dirname}/{$filename}_files/resources/';
+
+	/** カスタムフィールド */
+	$conf->plugins->px2dt->guieditor->custom_fields = array(
+		'multitext' => "broccoli-field-summernote",
+		'image' => "px2style__image",
+	);
+
+	/** Broccoliフィールドの初期設定 */
+	$conf->plugins->px2dt->guieditor->field_config = array(
+
+		// image フィールドを設定
+		'image' => array(
+			'filenameAutoSetter' => 'random', // random = 画像ファイル名をランダムに自動命名する。
+		),
+
+	);
+
+	// -------- Project Custom Setting --------
+	// プロジェクトが固有に定義する設定を行います。
+	$conf->extra = new stdClass;
 
 
 	// -------- PHP Setting --------

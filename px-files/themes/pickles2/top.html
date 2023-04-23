@@ -21,7 +21,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title><?= htmlspecialchars( $px->conf()->name ) ?></title>
+		<title><?= htmlspecialchars( $px->conf()->name ?? '') ?></title>
 <?php include(__DIR__.'/inc/headsection.inc'); ?>
 <?= $px->bowl()->pull('head') ?>
 
@@ -39,7 +39,7 @@
 				padding:0;
 			}
 			.theme_welcome .theme_welcome-title{
-				color: <?= htmlspecialchars($colors['link']); ?>;
+				color: <?= htmlspecialchars($colors['link'] ?? ''); ?>;
 				font-weight:bold;
 				font-size:xx-large;
 				margin:1em 0 0.5em 0;
@@ -69,7 +69,7 @@
 	<body>
 		<header class="theme_header" id="page_top">
 			<div class="container">
-				<h1 class="theme_si"><?= htmlspecialchars( $px->conf()->name ) ?></h1>
+				<h1 class="theme_si"><?= htmlspecialchars( $px->conf()->name ?? '' ) ?></h1>
 			</div>
 		</header>
 		<div class="theme_welcome">
@@ -87,7 +87,7 @@
 		</div><!-- /.theme_welcome -->
 		<div class="theme_mainblock">
 			<div class="container">
-				<div class="contents" <?= htmlspecialchars($theme->get_attr_bowl_name_by())?>="main">
+				<div class="contents" <?= htmlspecialchars($theme->get_attr_bowl_name_by() ?? '')?>="main">
 <?= $px->bowl()->pull() ?>
 				</div>
 			</div><!-- /.container -->
@@ -108,9 +108,9 @@
 	echo( '</ul>' );
 ?>
 			</div>
-<?php if( @strlen($px->conf()->copyright) ){ ?>
+<?php if( strlen($px->conf()->copyright ?? '') ){ ?>
 			<div class="container">
-				<p style="text-align:center;">&copy;<?= htmlspecialchars($px->conf()->copyright); ?>.</p>
+				<p style="text-align:center;">&copy;<?= htmlspecialchars($px->conf()->copyright ?? ''); ?>.</p>
 			</div>
 <?php } ?>
 		</footer>
