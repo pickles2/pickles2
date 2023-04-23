@@ -1,6 +1,6 @@
 <?php
 /**
- * config.php template
+ * config.php
  */
 return call_user_func( function(){
 
@@ -19,8 +19,15 @@ return call_user_func( function(){
 
 	/** サイト名 */
 	$conf->name = 'Pickles 2';
+
 	/** コピーライト表記 */
 	$conf->copyright = 'Pickles Project';
+
+	/** デフォルトの言語 */
+	$conf->default_lang = 'ja';
+
+	/** 対応する言語 */
+	$conf->accept_langs = array();
 
 	/**
 	 * スキーマ
@@ -278,14 +285,30 @@ return call_user_func( function(){
 	 * サイトマップ読み込みの後、コンテンツ実行の前に実行するプラグインを設定します。
 	 */
 	$conf->funcs->before_content = array(
+		// BlogKit
+		\pickles2\px2BlogKit\register::blog( array(
+			"blogs" => array(
+				"articles" => array(
+					"orderby" => "update_date",
+					"scending" => "desc",
+					"logical_path" => "/articles/{*}",
+				),
+			),
+		) ),
+
 		// PX=api
 		'picklesFramework2\commands\api::register' ,
 
 		// PX=publish (px2-publish-ex)
-		'tomk79\pickles2\publishEx\publish::register' ,
+		\tomk79\pickles2\publishEx\publish::register( array(
+			'publish_vendor_dir' => false,
+			'paths_ignore' => array(
+				'/caches/p/__console_resources/*',
+			),
+		) ),
 
 		// PX=px2dthelper
-		'tomk79\pickles2\px2dthelper\main::register' ,
+		'tomk79\pickles2\px2dthelper\main::register',
 	);
 
 
@@ -299,6 +322,14 @@ return call_user_func( function(){
 	 * Tips: テーマは、html に対するプロセッサの1つとして実装されています。
 	 */
 	$conf->funcs->processor = new stdClass;
+
+	// broccoli-receive-message スクリプトが許容するORIGINを制限する
+	$broccoli_enabled_origin = array();
+	if( isset($_ENV['CLOVER_CMS_ORIGIN']) ){
+		array_push($broccoli_enabled_origin, $_ENV['CLOVER_CMS_ORIGIN']);
+	}else{
+		array_push($broccoli_enabled_origin, tomk79\pickles2\px2dthelper\utils::get_server_origin());
+	}
 
 	$conf->funcs->processor->html = array(
 		// ページ内目次を自動生成する
@@ -338,9 +369,9 @@ return call_user_func( function(){
 		// broccoli-receive-message スクリプトを挿入
 		'tomk79\pickles2\px2dthelper\broccoli_receive_message::apply('.json_encode( array(
 			// 許可する接続元を指定
-			'enabled_origin'=>array(
-			)
-		) ).')' ,
+			'enabled_origin' => $broccoli_enabled_origin,
+		) ).')',
+
 	);
 
 	$conf->funcs->processor->css = array(
@@ -453,6 +484,11 @@ return call_user_func( function(){
 		),
 	);
 
+	/** 管理画面拡張 */
+	$conf->plugins->px2dt->custom_console_extensions = array(
+		'blog-kit' => pickles2\px2BlogKit\register::consoleExtension(),
+	);
+
 	/** config for GUI Editor. */
 	$conf->plugins->px2dt->guieditor = new stdClass;
 
@@ -474,9 +510,27 @@ return call_user_func( function(){
 		// image フィールドを設定
 		'image' => array(
 			'filenameAutoSetter' => 'random', // random = 画像ファイル名をランダムに自動命名する。
+			'format' => array(
+				'maxWidth' => 1600,
+				'maxHeight' => 2400,
+				'mimeType' => 'image/webp',
+				'quality' => 0.3,
+			),
 		),
 
 	);
+
+	/** Broccoli: ファイルをドロップしたときのオペレータを登録 */
+	$droppedImageOperator = \pickles2\px2style\utils::droppedFileOperator('image');
+	$conf->plugins->px2dt->guieditor->dropped_file_operator = array(
+		'png' => $droppedImageOperator,
+		'gif' => $droppedImageOperator,
+		'jpg' => $droppedImageOperator,
+		'webp' => $droppedImageOperator,
+		'svg' => $droppedImageOperator,
+		'application/svg+xml' => $droppedImageOperator,
+	);
+
 
 	// -------- Project Custom Setting --------
 	// プロジェクトが固有に定義する設定を行います。
