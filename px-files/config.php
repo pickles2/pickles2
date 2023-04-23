@@ -244,13 +244,13 @@ return call_user_func( function(){
 		)),
 
 		// PX=clearcache
-		'picklesFramework2\commands\clearcache::register' ,
+		'picklesFramework2\commands\clearcache::register',
 
 		// PX=config
-		'picklesFramework2\commands\config::register' ,
+		'picklesFramework2\commands\config::register',
 
 		// PX=phpinfo
-		'picklesFramework2\commands\phpinfo::register' ,
+		'picklesFramework2\commands\phpinfo::register',
 
 		// sitemapExcel
 		'tomk79\pickles2\sitemap_excel\pickles_sitemap_excel::exec('.json_encode(array(
@@ -261,16 +261,16 @@ return call_user_func( function(){
 			//   - `csv` = CSVをマスターにする
 			//   - `pass` = 変換しない
 			// のいずれかを指定します。
-			'master_format'=>'xlsx',
+			'master_format' => 'xlsx',
 
 			// `files_master_format`
 			// ファイル名ごとにマスターにするファイルフォーマットを指定します。
 			// ここに設定されていないファイルは、 `master_format` の設定に従います。
-			'files_master_format'=>array(
-				// 'timestamp_sitemap'=>'timestamp',
-				// 'csv_master_sitemap'=>'csv',
-				// 'xlsx_master_sitemap'=>'xlsx',
-				// 'no_convert'=>'pass',
+			'files_master_format' => array(
+				// 'timestamp_sitemap' => 'timestamp',
+				// 'csv_master_sitemap' => 'csv',
+				// 'xlsx_master_sitemap' => 'xlsx',
+				// 'no_convert' => 'pass',
 			),
 		)).')' ,
 
@@ -342,11 +342,11 @@ return call_user_func( function(){
 
 		// テーマ
 		'theme'=>'tomk79\pickles2\multitheme\theme::exec('.json_encode(array(
-			'param_theme_switch'=>'THEME',
-			'cookie_theme_switch'=>'THEME',
-			'path_theme_collection'=>'../px-files/themes/',
-			'attr_bowl_name_by'=>'data-contents-area',
-			'default_theme_id'=>'pickles2_theme',
+			'param_theme_switch' => 'THEME',
+			'cookie_theme_switch' => 'THEME',
+			'path_theme_collection' => '../px-files/themes/',
+			'attr_bowl_name_by' => 'data-contents-area',
+			'default_theme_id' => 'pickles2',
 		)).')' ,
 
 		// Apache互換のSSIの記述を解決する
@@ -361,10 +361,10 @@ return call_user_func( function(){
 
 		// 属性 data-contents-area を削除する
 		'tomk79\pickles2\remove_attr\main::exec('.json_encode(array(
-			"attrs"=>array(
+			"attrs" => array(
 				'data-contents-area',
 			) ,
-		)).')' ,
+		)).')',
 
 		// broccoli-receive-message スクリプトを挿入
 		'tomk79\pickles2\px2dthelper\broccoli_receive_message::apply('.json_encode( array(
@@ -382,18 +382,18 @@ return call_user_func( function(){
 
 	$conf->funcs->processor->md = array(
 		// Markdown文法を処理する
-		'picklesFramework2\processors\md\ext::exec' ,
+		'picklesFramework2\processors\md\ext::exec',
 
 		// html のデフォルトの処理を追加
-		$conf->funcs->processor->html ,
+		$conf->funcs->processor->html,
 	);
 
 	$conf->funcs->processor->scss = array(
 		// SCSS文法を処理する
-		'tomk79\pickles2\px2scss\scss::processor' ,
+		'tomk79\pickles2\px2scss\scss::processor',
 
 		// css のデフォルトの処理を追加
-		$conf->funcs->processor->css ,
+		$conf->funcs->processor->css,
 	);
 
 
@@ -416,9 +416,9 @@ return call_user_func( function(){
 		//       - false: 省略できるindexファイル名を削除
 		//       - null: そのまま (default)
 		'tomk79\pickles2\pathResolver\main::exec('.json_encode(array(
-			'to' => 'absolute' ,
+			'to' => 'absolute',
 			'supply_index_filename' => false
-		)).')' ,
+		)).')',
 
 		// output_encoding, output_eol_coding の設定に従ってエンコード変換する。
 		'picklesFramework2\processors\encodingconverter\encodingconverter::exec('.json_encode(array(
@@ -492,10 +492,10 @@ return call_user_func( function(){
 	/** config for GUI Editor. */
 	$conf->plugins->px2dt->guieditor = new stdClass;
 
-	/** GUI編集データディレクトリ */
+	/** Broccoli: データディレクトリ */
 	// $conf->plugins->px2dt->guieditor->path_data_dir = '{$dirname}/{$filename}_files/guieditor.ignore/';
 
-	/** GUI編集リソース出力先ディレクトリ */
+	/** Broccoli: リソース出力先ディレクトリ */
 	// $conf->plugins->px2dt->guieditor->path_resource_dir = '{$dirname}/{$filename}_files/resources/';
 
 	/** カスタムフィールド */
