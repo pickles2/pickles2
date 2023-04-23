@@ -19,7 +19,7 @@ Pickles 2 のインストールは、`composer` コマンドを使用します�
 $ cd {$documentRoot}
 $ composer create-project pickles2/pickles2 ./
 $ chmod -R 777 ./px-files/_sys
-$ chmod -R 777 ./caches
+$ chmod -R 777 ./src_px2/common/px_resources
 ```
 
 ウェブサーバーにブラウザでアクセスして、トップページが表示されるか、または、次のコマンドで設定情報が表示されれば成功です。
@@ -34,7 +34,22 @@ $ php ./.px_execute.php /?PX=config
 $ php ./.px_execute.php "/?PX=publish.run"
 ```
 
-`./px-files/_sys/ram/publish/` に、スタティックなHTMLとして出力されます。
+`./dist/` に、スタティックなHTMLとして出力されます。
+
+
+## サーバーを起動する手順 - Start server
+
+### プレビュー
+
+```bash
+$ composer start
+```
+
+### 公開ディレクトリ
+
+```bash
+$ composer run-script start-pub
+```
 
 
 ## キャッシュを消去する手順 - Clear caches
