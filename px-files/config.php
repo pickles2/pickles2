@@ -15,7 +15,7 @@ return call_user_func( function(){
 	/** サイト名 */
 	$conf->name = 'Pickles 2';
 	/** コピーライト表記 */
-	$conf->copyright = 'Pickles 2 Project';
+	$conf->copyright = 'Pickles Project';
 	/** ドメイン(本番環境のドメイン) */
 	$conf->domain = null;
 	/** コンテンツルートディレクトリ */
@@ -27,7 +27,7 @@ return call_user_func( function(){
 	/** トップページのパス(デフォルト "/") */
 	$conf->path_top = '/';
 	/** パブリッシュ先ディレクトリパス */
-	$conf->path_publish_dir = './px-files/dist/';
+	$conf->path_publish_dir = '../px-files/dist/';
 	/** 公開キャッシュディレクトリ */
 	$conf->public_cache_dir = '/caches/';
 	/** リソースディレクトリ(各コンテンツに対して1:1で関連付けられる)のパス */
@@ -213,7 +213,7 @@ return call_user_func( function(){
 		'theme'=>'tomk79\pickles2\multitheme\theme::exec('.json_encode([
 			'param_theme_switch'=>'THEME',
 			'cookie_theme_switch'=>'THEME',
-			'path_theme_collection'=>'./px-files/themes/',
+			'path_theme_collection'=>'../px-files/themes/',
 			'attr_bowl_name_by'=>'data-contents-area',
 			'default_theme_id'=>'pickles2'
 		]).')' ,
@@ -301,9 +301,9 @@ return call_user_func( function(){
 
 	/** broccoliモジュールセットの登録 */
 	$conf->plugins->px2dt->paths_module_template = [
-		"PlainHTMLElements" => "./vendor/pickles2/broccoli-module-plain-html-elements/modules/",
-		"local" => "./px-files/modules/",
-		"FESS" => "./vendor/pickles2/broccoli-module-fess/modules/"
+		"PlainHTMLElements" => "../vendor/pickles2/broccoli-module-plain-html-elements/modules/",
+		"local" => "../px-files/modules/",
+		"FESS" => "../vendor/pickles2/broccoli-module-fess/modules/"
 	];
 
 	/** コンテンツエリアを識別するセレクタ(複数の要素がマッチしてもよい) */
