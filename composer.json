@@ -1,27 +1,39 @@
 {
     "name": "pickles2/pickles2",
     "description": "Pickles 2 は、静的で大きなウェブサイトを効率よく構築できる オープンソースのHTML生成ツールです。",
-    "keywords": ["pickles2", "pickles"],
+    "keywords": ["pickles2", "CMS"],
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Tomoya Koyanagi",
-            "email": "tomk79@gmail.com"
-        }
-    ],
+    "config": {
+        "process-timeout": 0
+    },
+    "minimum-stability": "stable",
+	"scripts": {
+		"start": [
+			"@php ./src_px2/.px_execute.php \"/?PX=serve\""
+		],
+		"start-pub": [
+			"@php ./src_px2/.px_execute.php \"/?PX=serve.pub\""
+		]
+	},
     "repositories": [
     ],
     "require": {
-        "php": ">=5.4.0" ,
-        "pickles2/px-fw-2.x": "2.0.*",
-        "pickles2/broccoli-module-fess": "0.1.*",
-        "pickles2/broccoli-module-plain-html-elements": "0.1.*",
-        "pickles2/px2-dec": "2.0.*",
-        "pickles2/px2-multitheme": "2.0.*",
-        "pickles2/px2-path-resolver": "2.0.*",
-        "pickles2/px2-px2dthelper": "2.0.*",
-        "pickles2/px2-remove-attr": "2.0.*",
-        "pickles2/px2-sitemapexcel": "2.0.*"
+        "php": ">=7.4.0" ,
+		"broccoli-html-editor/broccoli-field-summernote": "~0.3",
+        "pickles2/px-fw-2.x": "~2.1",
+        "pickles2/px2-clover": "~0.2.0",
+        "pickles2/px2-dec": "~2.1",
+        "pickles2/px2-multitheme": "~2.1",
+        "pickles2/px2-path-resolver": "~2.1",
+        "pickles2/px2-px2dthelper": "~2.1",
+        "pickles2/px2-remove-attr": "~2.1",
+        "pickles2/px2-sitemapexcel": "~2.0",
+        "pickles2/px2-publish-ex": "~2.1",
+        "pickles2/px2style": "^3.1",
+		"tomk79/px2-page-list-generator": "^2.0.2",
+        "tomk79/px2-scss": "~0.1.0",
+        "tomk79/px2-serve": "~0.1.3",
+		"vlucas/phpdotenv": "~5.4.0"
     },
     "require-dev": {
     },
