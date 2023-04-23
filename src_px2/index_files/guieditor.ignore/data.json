@@ -1,0 +1,202 @@
+{
+    "bowl": {
+        "main": {
+            "modId": "_sys/root",
+            "fields": {
+                "main": [
+                    {
+                        "modId": "px2style:utils/viewport-fit",
+                        "fields": {
+                            "text-color": {
+                                "src": "#00a0e6"
+                            },
+                            "background-color": {
+                                "src": "#f6f6f6"
+                            },
+                            "background-image": {
+                                "resKey": "8be607047125cb7f621d3bf77ac5787f",
+                                "path": "./index_files/resources/8be607047125cb7f621d3bf77ac5787f.txt",
+                                "resType": "none",
+                                "webUrl": ""
+                            },
+                            "background-image-effect": {
+                                "src": ""
+                            },
+                            "min-height": {
+                                "src": "380px"
+                            },
+                            "margin-padding": {
+                                "marginTop": "",
+                                "marginRight": "",
+                                "marginBottom": "",
+                                "marginLeft": "",
+                                "paddingTop": "3rem",
+                                "paddingRight": "",
+                                "paddingBottom": "",
+                                "paddingLeft": ""
+                            },
+                            "fluid-innter": {
+                                "src": ""
+                            },
+                            "main": [
+                                {
+                                    "modId": "px2style:utils/p",
+                                    "fields": {
+                                        "paragraph": "px2-p",
+                                        "text-align": " px2-text-align-center",
+                                        "main": [
+                                            {
+                                                "modId": "px2style:basics/image",
+                                                "fields": {
+                                                    "href": "",
+                                                    "target": "",
+                                                    "image_src": {
+                                                        "resKey": "06ca6ed8bca0381b421041d77fe30dcf",
+                                                        "path": "./index_files/resources/welcome.svg",
+                                                        "resType": "",
+                                                        "webUrl": ""
+                                                    },
+                                                    "alt_text": {
+                                                        "src": "Welcome ! to Pickles 2"
+                                                    },
+                                                    "caption": {
+                                                        "src": "",
+                                                        "editor": "markdown"
+                                                    },
+                                                    "framed": {
+                                                        "src": ""
+                                                    },
+                                                    "width": {
+                                                        "src": "1of1"
+                                                    },
+                                                    "align": {
+                                                        "src": "center"
+                                                    },
+                                                    "imagescope": {
+                                                        "src": ""
+                                                    },
+                                                    "paragraph": {
+                                                        "src": "px2-p"
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            },
+                                            {
+                                                "modId": "px2style:sections/hx",
+                                                "fields": {
+                                                    "hx": {
+                                                        "src": "2"
+                                                    },
+                                                    "main": {
+                                                        "src": "ようこそ、 Pickles 2 の世界へ！"
+                                                    },
+                                                    "sub": {
+                                                        "src": ""
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            }
+                                        ]
+                                    },
+                                    "anchor": "",
+                                    "dec": ""
+                                }
+                            ]
+                        },
+                        "anchor": "",
+                        "dec": ""
+                    },
+                    {
+                        "modId": "px2style:medias/float",
+                        "fields": {
+                            "lr": {
+                                "src": "r"
+                            },
+                            "image-size": {
+                                "src": "1of3"
+                            },
+                            "media": [
+                                {
+                                    "modId": "px2style:medias/image-media",
+                                    "fields": {
+                                        "image_src": {
+                                            "resKey": "dccc7e8e8f8a07f2d0a003105b8b1c68",
+                                            "path": "./index_files/resources/13fo6d2wtv7yyo8r-f9727ccc9d7c068ebddfb3360e446e14.jpg",
+                                            "resType": "",
+                                            "webUrl": ""
+                                        },
+                                        "alt_text": {
+                                            "src": ""
+                                        },
+                                        "caption": {
+                                            "src": "",
+                                            "editor": "markdown"
+                                        },
+                                        "framed": {
+                                            "src": ""
+                                        },
+                                        "imagescope": {
+                                            "src": ""
+                                        }
+                                    },
+                                    "anchor": "",
+                                    "dec": ""
+                                }
+                            ],
+                            "body_rect": {
+                                "src": ""
+                            },
+                            "main": [
+                                {
+                                    "modId": "px2style:basics/text",
+                                    "fields": {
+                                        "main": {
+                                            "src": "<p>私たちは、地球上で持続可能な社会を実現するために、今まさに取り組むべき課題に直面しています。その中でも、持続可能なライフスタイルを実現することは、私たちが未来の世代に引き継ぐ地球環境を守るために必要不可欠な課題です。</p><p>このブログでは、持続可能なライフスタイルに関する最新のトレンドや取り組みを紹介し、読者のみなさまがより持続可能なライフスタイルを実現するためのヒントを提供していきます。具体的には、以下のようなトピックスに焦点を当てていきます。</p><ul><li>トレンド1：植物ベースのライフスタイルの拡大</li><li>トレンド2：再利用・リサイクルの拡大</li><li>トレンド3：低炭素社会の実現への取り組み</li><li>トレンド4：自然との共生を目指す暮らし</li></ul><p>また、私たち自身が実践できる持続可能なライフスタイルのヒントや、持続可能なライフスタイルに関するニュース、イベント情報などもお届けしていきます。</p><p>私たちは、このブログを通じて、みなさまとともに持続可能なライフスタイルを実現するための知識や情報を共有し、地球環境を守っていくことを目指します。ぜひ、このブログをお楽しみください。</p>",
+                                            "editor": ""
+                                        },
+                                        "paragraph": {
+                                            "src": "px2-p"
+                                        },
+                                        "text-align": {
+                                            "src": ""
+                                        },
+                                        "font-size": {
+                                            "src": ""
+                                        }
+                                    },
+                                    "anchor": "",
+                                    "dec": ""
+                                }
+                            ],
+                            "heading": []
+                        },
+                        "anchor": "",
+                        "dec": ""
+                    },
+                    {
+                        "modId": "px2style:basics/text",
+                        "fields": {
+                            "main": {
+                                "src": "<?php\n$listMgr = (new \\tomk79\\pickles2\\pageListGenerator\\main($px))->create(\n\tfunction($page_info){\n\t\tif(array_key_exists('article_flg', $page_info) && $page_info['article_flg']){\n\t\t\treturn true;\n\t\t}\n\t\treturn false;\n\t} ,\n\tarray(\n\t\t'scheme'=>$px->conf()->scheme,\n\t\t'domain'=>$px->conf()->domain,\n\t\t'title'=>$px->conf()->name,\n\t\t'description'=>'Try Shopify Blog',\n\t\t'lang'=>'ja',\n\t\t'dpp'=>9,\n\t\t'url_home'=>$px->canonical('/'),\n\t\t'url_index'=>$px->canonical('/articles/'),\n\t\t'author'=>$px->conf()->copyright,\n\t\t// 'rss'=>array(\n\t\t// \t'atom-1.0'=>$px->get_path_docroot().'rss/articles_atom0100.xml',\n\t\t// \t'rss-1.0'=>$px->get_path_docroot().'rss/articles_rss0100.rdf',\n\t\t// \t'rss-2.0'=>$px->get_path_docroot().'rss/articles_rss0200.xml',\n\t\t// )\n\t)\n);\n\necho $listMgr->draw();\n?>",
+                                "editor": "markdown"
+                            },
+                            "text-align": {
+                                "src": ""
+                            },
+                            "font-size": {
+                                "src": ""
+                            },
+                            "paragraph": {
+                                "src": "px2-p"
+                            }
+                        },
+                        "anchor": "",
+                        "dec": ""
+                    }
+                ]
+            }
+        }
+    }
+}

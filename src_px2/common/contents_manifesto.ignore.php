@@ -22,11 +22,7 @@
  ?>
 
 <!-- jQuery -->
-<script src="<?= htmlspecialchars($px->href('/common/scripts/jquery-1.10.1.min.js')); ?>" type="text/javascript"></script>
-
-<!-- Bootstrap -->
-<link rel="stylesheet" href="<?= htmlspecialchars( $px->href('/common/styles/bootstrap/css/bootstrap.min.css') ); ?>">
-<script src="<?= htmlspecialchars( $px->href('/common/styles/bootstrap/js/bootstrap.min.js') ); ?>"></script>
+<script src="<?= htmlspecialchars($px->href('/common/scripts/jquery-3.6.0.min.js')); ?>" type="text/javascript"></script>
 
 <!-- Contents Styles -->
 <link rel="stylesheet" href="<?= htmlspecialchars($px->href('/common/styles/contents.css')); ?>" type="text/css" />

@@ -1,67 +1,61 @@
-<?php if( !$px ){ ?>
-<meta charset="utf-8" />
-<div style="background-color:#fff; color:#f00; border:2px solid #f00; padding:20px;">
-	<p>このメッセージが表示されているということは、インストールが正常に完了していない可能性があります。</p>
-	<p>次の点を確認してください。</p>
-	<ul>
-		<li>index.html ファイルを直接ウェブブラウザで開いているかもしれません。ウェブサーバー Apache を経由して表示してください。</li>
-		<li>.htaccess の設定が反映されていない可能性があります。Apache の設定で <code>AllowOverride All</code> などとして、設定の上書きを許可してください。</li>
-		<li>Apache モジュールの mod_rewrite が利用できない可能性があります。有効になるように設定する、またはモジュールのインストールを行ってください。</li>
-	</ul>
+<div class="px2-viewport-fit">
+	<div class="px2-viewport-fit__inner" style="padding-top:3rem; background-color: #f6f6f6; min-height: 380px; color: #00a0e6;">
+		<div class="px2-viewport-fit__contents">
+<div class="px2-p px2-text-align-center">
+<div class="px2-image px2-text-align-center px2-image--width-1of1 px2-p">
+<div class="px2-image__img">
+<img src="<?= $px->h( $px->path_files("/resources/welcome.svg") ) ?>" alt="Welcome ! to Pickles 2" /></div>
 </div>
-<?php } ?>
-
-
-<h2>次のステップ</h2>
-
-<div class="cols unit">
-	<div class="cols-col cols-1of3"><div class="cols-pad">
-		<h3>サイトマップを編集します</h3>
-		<p>
-			はじめに、サイト全体の構造をサイトマップに登録します。1行が1ページで表現されるCSV形式のファイルです。<br />
-		</p>
-		<p>
-			サイトマップCSVは次のパスに置かれています。<br />
-		</p>
-		<div class="code"><pre><code>./px-files/sitemaps/</code></pre></div>
-
-	</div></div>
-	<div class="cols-col cols-1of3"><div class="cols-pad">
-		<h3>テーマを編集します</h3>
-		<p>
-			テーマは、コンテンツエリア以外のHTMLソースを生成するPHPテンプレートです。<br />
-			次のパスに置かれています。<br />
-		</p>
-		<div class="code"><pre><code>./px-files/themes/</code></pre></div>
-
-	</div></div>
-	<div class="cols-col cols-1of3 cols-last"><div class="cols-pad">
-		<h3>コンテンツを編集します</h3>
-		<p>
-			コンテンツは、コンテンツエリアのソースだけが記述されたシンプルなHTMLファイルです。<br />
-			サイトマップの path 欄に登録したパスにHTMLファイルを作成してください。<br />
-		</p>
-		<p>
-			あなたがいま見ているこのページは、テキストエディタで <code>/index.html</code> を開くとソースを確認できます。<br />
-			このページも、削除や上書きしてあなたのサイトのトップページに置き換えてください。<br />
-		</p>
-	</div></div>
-</div><!-- / .cols -->
-
-<h3>パブリッシュします</h3>
-<p>
-	サイトができあがったら、そのまま静的なHTMLに書き出すことができます。<br />
-	次のコマンドで、パブリッシュを実行します。<br />
-</p>
-
-<div class="unit">
-	<div class="code"><pre><code>$ php ./.px_execute.php /?PX=publish.run
-</code></pre></div>
+<div class="px2-h2">
+<h2>ようこそ、 Pickles 2 の世界へ！</h2>
 </div>
-<p>
-	しばらくすると、次のパスに、静的なHTMLファイルが生成されます。<br />
-</p>
-<div class="code"><pre><code>./px-files/_sys/ram/publish/</code></pre></div>
 
+</div>
 
+		</div>
+	</div>
+</div>
+<div class="px2-float-media">
+  <div class="px2-float-media__r1of3">
+    <figure class="px2-embedded-media">
+  <div class="px2-embedded-media__image-media"><img src="<?= $px->h( $px->path_files("/resources/13fo6d2wtv7yyo8r-f9727ccc9d7c068ebddfb3360e446e14.jpg") ) ?>" alt="" /></div>
+  </figure>
 
+  </div>
+  <div class="px2-float-media__body">
+    <div class="px2-p">
+<p>私たちは、地球上で持続可能な社会を実現するために、今まさに取り組むべき課題に直面しています。その中でも、持続可能なライフスタイルを実現することは、私たちが未来の世代に引き継ぐ地球環境を守るために必要不可欠な課題です。</p><p>このブログでは、持続可能なライフスタイルに関する最新のトレンドや取り組みを紹介し、読者のみなさまがより持続可能なライフスタイルを実現するためのヒントを提供していきます。具体的には、以下のようなトピックスに焦点を当てていきます。</p><ul><li>トレンド1：植物ベースのライフスタイルの拡大</li><li>トレンド2：再利用・リサイクルの拡大</li><li>トレンド3：低炭素社会の実現への取り組み</li><li>トレンド4：自然との共生を目指す暮らし</li></ul><p>また、私たち自身が実践できる持続可能なライフスタイルのヒントや、持続可能なライフスタイルに関するニュース、イベント情報などもお届けしていきます。</p><p>私たちは、このブログを通じて、みなさまとともに持続可能なライフスタイルを実現するための知識や情報を共有し、地球環境を守っていくことを目指します。ぜひ、このブログをお楽しみください。</p>
+</div>
+
+  </div>
+</div><!-- /.px2-float-media -->
+<div class="px2-p">
+<?php
+$listMgr = (new \tomk79\pickles2\pageListGenerator\main($px))->create(
+    function($page_info){
+        if(array_key_exists('article_flg', $page_info) && $page_info['article_flg']){
+            return true;
+        }
+        return false;
+    } ,
+    array(
+        'scheme'=>$px->conf()->scheme,
+        'domain'=>$px->conf()->domain,
+        'title'=>$px->conf()->name,
+        'description'=>'Try Shopify Blog',
+        'lang'=>'ja',
+        'dpp'=>9,
+        'url_home'=>$px->canonical('/'),
+        'url_index'=>$px->canonical('/articles/'),
+        'author'=>$px->conf()->copyright,
+        // 'rss'=>array(
+        //  'atom-1.0'=>$px->get_path_docroot().'rss/articles_atom0100.xml',
+        //  'rss-1.0'=>$px->get_path_docroot().'rss/articles_rss0100.rdf',
+        //  'rss-2.0'=>$px->get_path_docroot().'rss/articles_rss0200.xml',
+        // )
+    )
+);
+echo $listMgr->draw();
+?>
+
+</div>
