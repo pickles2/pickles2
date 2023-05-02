@@ -238,6 +238,11 @@ return call_user_func( function(){
 	 * サイトマップ読み込みの前に実行するプラグインを設定します。
 	 */
 	$conf->funcs->before_sitemap = array(
+		// px2-error-reporter
+		\tomk79\pickles2\px2ErrorReporter\register::register(array(
+			"realpath_log_dir" => __DIR__.'/_sys/ram/data/',
+		)),
+
 		// px2-clover
 		\tomk79\pickles2\px2clover\register::clover(array(
 			"protect_preview" => true, // プレビューに認証を要求するか？
