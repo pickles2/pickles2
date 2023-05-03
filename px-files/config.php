@@ -20,6 +20,9 @@ return call_user_func( function(){
 	/** サイト名 */
 	$conf->name = 'Pickles 2';
 
+	/** キャッチフレーズ */
+	$conf->tagline = '';
+
 	/** コピーライト表記 */
 	$conf->copyright = 'Pickles Project';
 
