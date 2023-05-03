@@ -97,6 +97,13 @@ $ php -r "readfile('https://getcomposer.org/installer');" | php
 ```
 
 
+### pickles2/pickles2 v2.1.0 (2023年5月4日)
+
+- Pickles 2 Clover CMS を導入した。
+- dotEnv を導入した。
+- BlogKit を導入した。
+- その他、初期コンテンツを更新した。
+
 
 ## ライセンス - License
 
