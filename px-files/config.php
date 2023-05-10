@@ -522,7 +522,7 @@ return call_user_func( function(){
 				'maxWidth' => 1600,
 				'maxHeight' => 2400,
 				'mimeType' => 'image/webp',
-				'quality' => 0.3,
+				'quality' => 0.5,
 			),
 		),
 
