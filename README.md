@@ -1,22 +1,25 @@
 Pickles 2
 =========
 
-[Pickles 2](https://pickles2.com/) は、静的で大きなウェブサイトを効率よく構築できる オープンソースのHTML生成ツールです。
+[Pickles 2](https://pickles2.com/) は、オープンソースの静的CMSです。
 
-- サイトマップ(ページリスト)をCSV形式で管理し、グローバルナビゲーションの生成やカレント処理、パンくず生成、タイトルやメタタグの出力などを自動化します。
-- コンテンツ(ページ固有の内容部分)と、テーマ(ヘッダ、フッタ、ナビゲーションなどの共通部分)に分けてコーディングします。テーマはサイト全体を通して一元化された共通コードから自動生成します。
 - データベース不要、 PHP が動くウェブサーバーに手軽に導入できます。
+- サイトマップ(ページリスト)をExcelまたはCSV形式で管理し、グローバルナビゲーションの生成やカレント処理、パンくず生成、タイトルやメタタグの出力などを自動化します。
+- 直感的なドラッグ&ドロップの操作で編集できるブロックエディタ機能を搭載しています。
+- コンテンツ(ページ固有の内容部分)と、テーマ(ヘッダ、フッタ、ナビゲーションなどの共通部分)に分けてコーディングします。テーマはサイト全体を通して一元化された共通コードから自動生成します。
 - Markdown や SCSS などの文法を動的に導入できます。
 - 簡単なコマンドで、スタティックなHTMLファイルを出力(パブリッシュ)できます。
-- Composer 導入により、機能の追加、拡張が手軽にできるようになりました。
+- モバイルブラウザにも対応した管理画面は、公開コードから完全に切り離され、安全です。
+- Gitによる完全な編集履歴の管理、編集内容のバックアップ、復元、転送が可能です。
 
 
 ## インストール手順 - Install
 
 Pickles 2 のインストールは、`composer` コマンドを使用します。
+`${documentRoot}` の部分は、インストール先の任意のディレクトリパスに置き換えてください。
 
 ```bash
-$ cd {$documentRoot}
+$ cd ${documentRoot}
 $ composer create-project pickles2/pickles2 ./
 $ chmod -R 777 ./px-files/_sys
 $ chmod -R 777 ./src_px2/common/px_resources
@@ -25,13 +28,13 @@ $ chmod -R 777 ./src_px2/common/px_resources
 ウェブサーバーにブラウザでアクセスして、トップページが表示されるか、または、次のコマンドで設定情報が表示されれば成功です。
 
 ```bash
-$ php ./.px_execute.php /?PX=config
+$ php ./src_px2/.px_execute.php "/?PX=config"
 ```
 
 ## パブリッシュ手順 - Publish
 
 ```bash
-$ php ./.px_execute.php "/?PX=publish.run"
+$ php ./src_px2/.px_execute.php "/?PX=publish.run"
 ```
 
 `./dist/` に、スタティックなHTMLとして出力されます。
@@ -55,7 +58,7 @@ $ composer run-script start-pub
 ## キャッシュを消去する手順 - Clear caches
 
 ```bash
-$ php ./.px_execute.php "/?PX=clearcache"
+$ php ./src_px2/.px_execute.php "/?PX=clearcache"
 ```
 
 ## システム要件 - System Requirement
@@ -64,7 +67,7 @@ $ php ./.px_execute.php "/?PX=clearcache"
 - Apache 1.3 以降
   - mod_rewrite が利用可能であること
   - .htaccess が利用可能であること
-- PHP 7.4 以上
+- PHP 7.3 以上
   - mb_string が有効に設定されていること
   - safe_mode が無効に設定されていること
 
@@ -96,6 +99,8 @@ $ cd C:\\bin
 $ php -r "readfile('https://getcomposer.org/installer');" | php
 ```
 
+
+## 更新履歴 - Change log
 
 ### pickles2/pickles2 v2.1.1 (2023年5月10日)
 
