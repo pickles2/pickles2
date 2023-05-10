@@ -97,6 +97,10 @@ $ php -r "readfile('https://getcomposer.org/installer');" | php
 ```
 
 
+### pickles2/pickles2 v2.1.1 (リリース日未定)
+
+- 簡易サーバーの起動時のオリジン指定を追加。プレビュー環境は `127.0.0.1:8080` 、静的パブリッシュ環境は `127.0.0.1:8081` とした。
+
 ### pickles2/pickles2 v2.1.0 (2023年5月4日)
 
 - Pickles 2 Clover CMS を導入した。

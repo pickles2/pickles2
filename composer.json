@@ -9,10 +9,10 @@
     "minimum-stability": "stable",
     "scripts": {
         "start": [
-            "@php ./src_px2/.px_execute.php \"/?PX=serve\""
+            "@php ./src_px2/.px_execute.php \"/?PX=serve&S=127.0.0.1:8080\""
         ],
         "start-pub": [
-            "@php ./src_px2/.px_execute.php \"/?PX=serve.pub\""
+            "@php ./src_px2/.px_execute.php \"/?PX=serve.pub&S=127.0.0.1:8081\""
         ]
     },
     "repositories": [
