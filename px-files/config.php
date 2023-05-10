@@ -9,6 +9,7 @@ return call_user_func( function(){
 		$dotenv->load();
 	}
 
+	// --------------------------------------
 	// initialize
 
 	/** コンフィグオブジェクト */
@@ -136,34 +137,34 @@ return call_user_func( function(){
 	 * $conf->funcs->processor->html に設定したプロセッサのリストに沿って、上から順に処理されます。
 	 */
 	$conf->paths_proc_type = array(
-		'/.htaccess' => 'ignore' ,
-		'/.px_execute.php' => 'ignore' ,
-		'/px-files/*' => 'ignore' ,
-		'/composer.json' => 'ignore' ,
-		'/composer.lock' => 'ignore' ,
-		'/README.md' => 'ignore' ,
-		'/vendor/*' => 'ignore' ,
-		'*/.DS_Store' => 'ignore' ,
-		'*/Thumbs.db' => 'ignore' ,
-		'*/.svn/*' => 'ignore' ,
-		'*/.git/*' => 'ignore' ,
-		'*/.gitignore' => 'ignore' ,
+		'/.htaccess' => 'ignore',
+		'/.px_execute.php' => 'ignore',
+		'/px-files/*' => 'ignore',
+		'/composer.json' => 'ignore',
+		'/composer.lock' => 'ignore',
+		'/README.md' => 'ignore',
+		'/vendor/*' => 'ignore',
+		'*/.DS_Store' => 'ignore',
+		'*/Thumbs.db' => 'ignore',
+		'*/.svn/*' => 'ignore',
+		'*/.git/*' => 'ignore',
+		'*/.gitignore' => 'ignore',
 
-		'*.ignore/*' => 'ignore' ,
-		'*.ignore.*' => 'ignore' ,
-		'*.pass/*' => 'pass' ,
-		'*.pass.*' => 'pass' ,
-		'*.direct/*' => 'direct' ,
-		'*.direct.*' => 'direct' ,
+		'*.ignore/*' => 'ignore',
+		'*.ignore.*' => 'ignore',
+		'*.pass/*' => 'pass',
+		'*.pass.*' => 'pass',
+		'*.direct/*' => 'direct',
+		'*.direct.*' => 'direct',
 
-		'*.html' => 'html' ,
-		'*.htm' => 'html' ,
-		'*.css' => 'css' ,
-		'*.js' => 'js' ,
-		'*.png' => 'pass' ,
-		'*.jpg' => 'pass' ,
-		'*.gif' => 'pass' ,
-		'*.svg' => 'pass' ,
+		'*.html' => 'html',
+		'*.htm' => 'html',
+		'*.css' => 'css',
+		'*.js' => 'js',
+		'*.png' => 'pass',
+		'*.jpg' => 'pass',
+		'*.gif' => 'pass',
+		'*.svg' => 'pass',
 	);
 
 
@@ -280,7 +281,7 @@ return call_user_func( function(){
 				// 'xlsx_master_sitemap' => 'xlsx',
 				// 'no_convert' => 'pass',
 			),
-		)).')' ,
+		)).')',
 
 		// px2-serve
 		\tomk79\pickles2\px2serve\serve::register(),
@@ -305,7 +306,7 @@ return call_user_func( function(){
 		) ),
 
 		// PX=api
-		'picklesFramework2\commands\api::register' ,
+		'picklesFramework2\commands\api::register',
 
 		// PX=publish (px2-publish-ex)
 		\tomk79\pickles2\publishEx\publish::register( array(
@@ -341,12 +342,12 @@ return call_user_func( function(){
 
 	$conf->funcs->processor->html = array(
 		// ページ内目次を自動生成する
-		'picklesFramework2\processors\autoindex\autoindex::exec' ,
+		'picklesFramework2\processors\autoindex\autoindex::exec',
 
 		// px2-path-resolver - 共通コンテンツのリンクやリソースのパスを解決する
 		//   このAPIは、サイトマップCSV上で path と content が異なるパスを参照している場合に、
 		//   相対的に記述されたリンクやリソースのパスがあわなくなる問題を解決します。
-		'tomk79\pickles2\pathResolver\main::resolve_common_contents()' ,
+		'tomk79\pickles2\pathResolver\main::resolve_common_contents()',
 
 		// テーマ
 		'theme'=>'tomk79\pickles2\multitheme\theme::exec('.json_encode(array(
@@ -355,26 +356,27 @@ return call_user_func( function(){
 			'path_theme_collection' => '../px-files/themes/',
 			'attr_bowl_name_by' => 'data-contents-area',
 			'default_theme_id' => 'pickles2',
-		)).')' ,
+		)).')',
 
 		// Apache互換のSSIの記述を解決する
-		'picklesFramework2\processors\ssi\ssi::exec' ,
+		'picklesFramework2\processors\ssi\ssi::exec',
 
 		// DEC変換処理の実行
 		//   Pickles2の状態を参照し、自動的に処理を振り分けます。
 		//   パブリッシュする場合、DECコメントを削除します。
 		//   プレビューの場合、DECライブラリを埋め込み、
 		//   URIパラメータからDECの表示・非表示を切り替えられるようにします。
-		'tomk79\pickles2\dec\main::exec()' ,
+		'tomk79\pickles2\dec\main::exec()',
 
 		// 属性 data-contents-area を削除する
 		'tomk79\pickles2\remove_attr\main::exec('.json_encode(array(
 			"attrs" => array(
 				'data-contents-area',
-			) ,
+			),
 		)).')',
 
 		// broccoli-receive-message スクリプトを挿入
+		// (Optional)
 		'tomk79\pickles2\px2dthelper\broccoli_receive_message::apply('.json_encode( array(
 			// 許可する接続元を指定
 			'enabled_origin' => $broccoli_enabled_origin,
@@ -436,7 +438,7 @@ return call_user_func( function(){
 				'css',
 				'js',
 			),
-		)).')' ,
+		)).')',
 
 	);
 
@@ -473,22 +475,22 @@ return call_user_func( function(){
 	/** パブリッシュのパターンを登録 */
 	$conf->plugins->px2dt->publish_patterns = array(
 		array(
-			'label'=>'すべて',
-			'paths_region'=> array('/'),
-			'paths_ignore'=> array(),
-			'keep_cache'=>false
+			'label' => 'すべて',
+			'paths_region' => array('/'),
+			'paths_ignore' => array(),
+			'keep_cache' => false,
 		),
 		array(
-			'label'=>'リソース類',
-			'paths_region'=> array('/common/'),
-			'paths_ignore'=> array(),
-			'keep_cache'=>true
+			'label' => 'リソース類',
+			'paths_region' => array('/common/'),
+			'paths_ignore' => array(),
+			'keep_cache' => true,
 		),
 		array(
-			'label'=>'すべて(commonを除く)',
-			'paths_region'=> array('/'),
-			'paths_ignore'=> array('/common/'),
-			'keep_cache'=>false
+			'label' => 'すべて(commonを除く)',
+			'paths_region' => array('/'),
+			'paths_ignore' => array('/common/'),
+			'keep_cache' => false,
 		),
 	);
 
@@ -559,7 +561,7 @@ return call_user_func( function(){
 	 * -1 を与えた場合、無限(システムリソースの上限まで)に設定されます。
 	 * サイトマップやコンテンツなどで、容量の大きなデータを扱う場合に調整してください。
 	 */
-	// @ini_set( 'memory_limit' , -1 );
+	// @ini_set( 'memory_limit', -1 );
 
 	/**
 	 * `display_errors`, `error_reporting`
