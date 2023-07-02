@@ -3,11 +3,11 @@ Pickles 2
 
 [Pickles 2](https://pickles2.com/) は、オープンソースの静的CMSです。
 
-- データベース不要、 PHP が動くウェブサーバーに手軽に導入できます。
-- サイトマップ(ページリスト)をExcelまたはCSV形式で管理し、グローバルナビゲーションの生成やカレント処理、パンくず生成、タイトルやメタタグの出力などを自動化します。
+- データベース不要、 PHPが動くウェブサーバーに手軽に導入できます。
+- サイトマップ(ページリスト)をExcelまたはCSV形式で管理し、ビゲーションの生成やパンくず生成、タイトルやメタタグの出力などを一元管理します。
 - 直感的なドラッグ&ドロップの操作で編集できるブロックエディタ機能を搭載しています。
+- Markdown で記事を編集することも可能です。
 - コンテンツ(ページ固有の内容部分)と、テーマ(ヘッダ、フッタ、ナビゲーションなどの共通部分)に分けてコーディングします。テーマはサイト全体を通して一元化された共通コードから自動生成します。
-- Markdown や SCSS などの文法を動的に導入できます。
 - 簡単なコマンドで、スタティックなHTMLファイルを出力(パブリッシュ)できます。
 - モバイルブラウザにも対応した管理画面は、公開コードから完全に切り離され、安全です。
 - Gitによる完全な編集履歴の管理、編集内容のバックアップ、復元、転送が可能です。
@@ -31,6 +31,7 @@ $ chmod -R 777 ./src_px2/common/px_resources
 $ php ./src_px2/.px_execute.php "/?PX=config"
 ```
 
+
 ## パブリッシュ手順 - Publish
 
 ```bash
@@ -41,6 +42,8 @@ $ php ./src_px2/.px_execute.php "/?PX=publish.run"
 
 
 ## サーバーを起動する手順 - Start server
+
+PHPビルトインサーバーで起動することができます。
 
 ### プレビュー
 
@@ -64,40 +67,15 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 ## システム要件 - System Requirement
 
 - Mac, Linux または Windowsサーバ
-- Apache 1.3 以降
+- Apache
   - mod_rewrite が利用可能であること
   - .htaccess が利用可能であること
+  - または、Nginx、 PHPビルトインサーバー でも利用可能
 - PHP 7.3 以上
-  - mb_string が有効に設定されていること
-  - safe_mode が無効に設定されていること
-
-
-## 付録 - Appendix
-
-### composer のインストール
-
-`composer` のインストール方法について
-詳しくは [composerの公式サイト(英語)](https://getcomposer.org/doc/00-intro.md) を参照してください。
-
-下記は公式サイトからの抜粋です。参考までに。
-
-#### Macの方
-
-Mac の方は、次のコマンドでグローバルインストールできます。
-
-```bash
-$ curl -sS https://getcomposer.org/installer | php
-$ mv composer.phar /usr/local/bin/composer
-```
-#### Windowsの方
-
-Windows の方は、GUIインストーラ Composer-Setup.exe が用意されています。
-次のコマンドでもインストールできますので、お好みの方法でインストールしてください。
-
-```bash
-$ cd C:\\bin
-$ php -r "readfile('https://getcomposer.org/installer');" | php
-```
+  - [mbstring](https://www.php.net/manual/ja/book.mbstring.php) PHP Extension
+  - [JSON](https://www.php.net/manual/ja/book.json.php) PHP Extension
+  - [PDO](https://www.php.net/manual/ja/book.pdo.php) PHP Extension
+  - [PDO SQLite (PDO_SQLITE)](https://www.php.net/manual/ja/ref.pdo-sqlite.php) PHP Extension
 
 
 ## 更新履歴 - Change log
