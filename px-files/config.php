@@ -94,6 +94,8 @@ return call_user_func( function(){
 	 */
 	$conf->commands = new stdClass;
 	$conf->commands->php = ($_ENV['CMD_PHP'] ?? 'php');
+	$conf->commands->composer = ($_ENV['CMD_COMPOSER'] ?? 'composer');
+	$conf->commands->git = ($_ENV['CMD_GIT'] ?? 'git');
 
 	/**
 	 * php.ini のパス

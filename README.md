@@ -80,6 +80,10 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 
 ## 更新履歴 - Change log
 
+### pickles2/pickles2 v2.1.2 (リリース日未定)
+
+- `.env` 項目に、`CMD_COMPOSER`、`CMD_GIT` を追加した。
+
 ### pickles2/pickles2 v2.1.1 (2023年5月10日)
 
 - 簡易サーバーの起動時のオリジン指定を追加。プレビュー環境は `127.0.0.1:8080` 、静的パブリッシュ環境は `127.0.0.1:8081` とした。
