@@ -83,6 +83,7 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 ### pickles2/pickles2 v2.1.2 (リリース日未定)
 
 - `.env` 項目に、`CMD_COMPOSER`、`CMD_GIT` を追加した。
+- `config.php` の末尾に `setlocale()` のサンプルを追加した。
 
 ### pickles2/pickles2 v2.1.1 (2023年5月10日)
 

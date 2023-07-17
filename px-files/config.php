@@ -563,7 +563,7 @@ return call_user_func( function(){
 	 * -1 を与えた場合、無限(システムリソースの上限まで)に設定されます。
 	 * サイトマップやコンテンツなどで、容量の大きなデータを扱う場合に調整してください。
 	 */
-	// @ini_set( 'memory_limit', -1 );
+	// ini_set( 'memory_limit', -1 );
 
 	/**
 	 * `display_errors`, `error_reporting`
@@ -576,9 +576,15 @@ return call_user_func( function(){
 	 *
 	 * エラーメッセージは問題解決の助けになります。
 	 */
-	// @ini_set('display_errors', 1);
-	// @ini_set('error_reporting', E_ALL);
+	// ini_set('display_errors', 1);
+	// ini_set('error_reporting', E_ALL);
 
+	/**
+	 * `locale`
+	 *
+	 * コミットメッセージ中の日本語文字が消えてしまう場合に試してみてください。
+	 */
+	// setlocale(LC_CTYPE, 'ja_JP.UTF-8');
 
 	return $conf;
 } );
