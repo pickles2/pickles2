@@ -80,6 +80,11 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 
 ## 更新履歴 - Change log
 
+### pickles2/pickles2 v2.2.0 (リリース日未定)
+
+- デフォルトのテーマを更新。 `artilce` レイアウトに対応した。
+- 依存パッケージを更新。
+
 ### pickles2/pickles2 v2.1.2 (2023年7月18日)
 
 - `.env` 項目に、`CMD_COMPOSER`、`CMD_GIT` を追加した。
