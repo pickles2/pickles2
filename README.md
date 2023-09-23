@@ -83,7 +83,8 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 ### pickles2/pickles2 v2.2.0 (リリース日未定)
 
 - デフォルトのテーマを更新。 `article` レイアウトに対応した。
-- 依存パッケージを更新。
+- 標準モジュールを更新した。
+- 依存パッケージを更新した。
 
 ### pickles2/pickles2 v2.1.2 (2023年7月18日)
 

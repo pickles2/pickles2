@@ -1166,6 +1166,7 @@
 }
 .contents table.px2-table th, .contents table.px2-table td {
   border: 1px solid #dee2e6;
+  padding: 0.6em 1em;
   word-wrap: break-word;
 }
 .contents table.px2-table--left {
@@ -1202,6 +1203,7 @@
 .contents .px2-grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0rem;
   margin: 0 -0.5rem 0 -0.5rem;
   box-sizing: border-box;
@@ -2583,9 +2585,9 @@
 }
 .contents .px2-viewport-fit__inner {
   box-sizing: border-box;
-  width: calc(100vw - 50px);
+  width: calc(100vw);
   position: relative;
-  left: calc(-50vw + 25px);
+  left: calc(-50vw);
 }
 .contents .px2-viewport-fit__contents {
   margin: 0 auto;
