@@ -83,6 +83,7 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 ### pickles2/pickles2 v2.2.1 (リリース日未定)
 
 - モジュールを更新した。
+- ページ内目次機能に、クラス名 `.px2-index-list` を与えるようになった。
 
 ### pickles2/pickles2 v2.2.0 (2023年9月24日)
 

@@ -255,16 +255,16 @@ return call_user_func( function(){
 		)),
 
 		// PX=clearcache
-		'picklesFramework2\commands\clearcache::register',
+		\picklesFramework2\commands\clearcache::register(),
 
 		// PX=config
-		'picklesFramework2\commands\config::register',
+		\picklesFramework2\commands\config::register(),
 
 		// PX=phpinfo
-		'picklesFramework2\commands\phpinfo::register',
+		\picklesFramework2\commands\phpinfo::register(),
 
 		// sitemapExcel
-		'tomk79\pickles2\sitemap_excel\pickles_sitemap_excel::exec('.json_encode(array(
+		\tomk79\pickles2\sitemap_excel\pickles_sitemap_excel::exec(array(
 			// `master_format`
 			// マスターにするファイルフォーマットを指定します。
 			//   - `timestamp` = タイムスタンプが新しい方をマスターにする(デフォルト)
@@ -283,7 +283,7 @@ return call_user_func( function(){
 				// 'xlsx_master_sitemap' => 'xlsx',
 				// 'no_convert' => 'pass',
 			),
-		)).')',
+		)),
 
 		// px2-serve
 		\tomk79\pickles2\px2serve\serve::register(),
@@ -344,7 +344,9 @@ return call_user_func( function(){
 
 	$conf->funcs->processor->html = array(
 		// ページ内目次を自動生成する
-		'picklesFramework2\processors\autoindex\autoindex::exec',
+		\picklesFramework2\processors\autoindex\autoindex::exec(array(
+			'class' => 'px2-index-list',
+		)),
 
 		// px2-path-resolver - 共通コンテンツのリンクやリソースのパスを解決する
 		//   このAPIは、サイトマップCSV上で path と content が異なるパスを参照している場合に、
@@ -361,7 +363,7 @@ return call_user_func( function(){
 		)).')',
 
 		// Apache互換のSSIの記述を解決する
-		'picklesFramework2\processors\ssi\ssi::exec',
+		\picklesFramework2\processors\ssi\ssi::exec(),
 
 		// DEC変換処理の実行
 		//   Pickles2の状態を参照し、自動的に処理を振り分けます。
@@ -394,7 +396,7 @@ return call_user_func( function(){
 
 	$conf->funcs->processor->md = array(
 		// Markdown文法を処理する
-		'picklesFramework2\processors\md\ext::exec',
+		\picklesFramework2\processors\md\ext::exec(),
 
 		// html のデフォルトの処理を追加
 		$conf->funcs->processor->html,

@@ -38,6 +38,9 @@
  * module: px2style:lists/changelog
  */
   /**
+ * module: px2style:lists/index
+ */
+  /**
  * module: px2style:lists/ul-links
  */
   /**
@@ -1888,6 +1891,27 @@
     margin-bottom: 0.5em;
     padding-left: 1em;
   }
+}
+.contents .px2-index-list {
+  margin: 2em 5%;
+  border: 1px solid #bbb6;
+  padding: 1em;
+  background: rgba(124, 124, 124, 0.05);
+  border-radius: 5px;
+}
+.contents .px2-index-list__title {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-weight: bold;
+}
+.contents .px2-index-list ul {
+  margin: 0;
+  padding: 0 0 0 2em;
+}
+.contents .px2-index-list ul li {
+  display: list-item;
+  list-style-type: disc;
 }
 .contents .px2-linklist {
   padding: 0;
