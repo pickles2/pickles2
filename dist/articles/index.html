@@ -88,9 +88,11 @@
 </div>
 		</div>
 		<div class="theme-layouts__rnavi">
+			<div class="theme-layouts__rnavi-inner">
 <nav class="theme-common-navi">
 	<p><a href="/articles/">記事一覧</a></p>
 </nav>
+			</div>
 		</div>
 	</div>
 </div>
@@ -103,6 +105,8 @@
 <div class="theme-breadcrumb"><ul><li><a href="/">ホーム</a></li><li><span>記事一覧</span></li></ul></div>
 		</div>
 		<div class="theme-layouts__rnavi">
+			<div class="theme-layouts__rnavi-inner">
+			</div>
 		</div>
 	</div>
 </div>
@@ -131,6 +135,9 @@
 	</div>
 	<div class="theme-hamburger-menu__body">
 		<div class="theme-hamburger-menu__body-inner">
+			<div class="theme-hamburger-menu__title">
+				<p><a href="/">Pickles 2</a></p>
+			</div>
 			<div class="theme-hamburger-menu__mega-menu">
 <ul>
 <li><a href="/about/">このブログについて</a></li>
@@ -155,5 +162,18 @@
 
 		<script src="/common/px_resources/p/theme/pickles2/modules.js"></script>
 
+		<script src="/common/px_resources/p/theme/pickles2/scripts/sidebarFix.js"></script>
+		<script>
+			window.addEventListener('load', function(){
+				// .sidebar-fix を固定します
+				if( $('.theme-layouts__rnavi-inner').length ){
+					sidebarFix('.theme-layouts__rnavi-inner', {
+						frame: $('.theme-layouts__rnavi'),
+						topBuffer: 10,
+						force: true
+					});
+				}
+			});
+		</script>
 	</body>
 </html>

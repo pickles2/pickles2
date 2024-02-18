@@ -378,17 +378,6 @@
 /**
  * module: themeEditorModules:layouts/fullcolumn
  */
-:root {
-  --theme-keycolor: #00a0e6;
-  --theme-textcolor-on-keycolor: #eee;
-  --theme-subcolor: #00a0e6;
-  --theme-textcolor-on-subcolor: #eee;
-  --px2-font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", "Helvetica Neue", "Arial", sans-serif;
-  --px2-main-color: #00a0e6;
-  --px2-text-color: #333;
-  --px2-background-color: #f9f9f9;
-  --px2-border-color: #f0f0f0;
-}
 /**
  * .anchor_links
  */
@@ -482,17 +471,6 @@
  * module: themeEditorModules:layouts/hamburger-menu
  */
 @charset "UTF-8";
-:root {
-  --theme-keycolor: #00a0e6;
-  --theme-textcolor-on-keycolor: #eee;
-  --theme-subcolor: #00a0e6;
-  --theme-textcolor-on-subcolor: #eee;
-  --px2-font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", "Helvetica Neue", "Arial", sans-serif;
-  --px2-main-color: #00a0e6;
-  --px2-text-color: #333;
-  --px2-background-color: #f9f9f9;
-  --px2-border-color: #f0f0f0;
-}
 /**
  * ハンバーガーメニュー
  */
@@ -510,6 +488,10 @@
   width: 60px;
   height: 60px;
   z-index: 110;
+}
+.theme-hamburger-menu__title {
+  text-align: center;
+  font-weight: bold;
 }
 .theme-hamburger-menu__body {
   display: none;
@@ -676,17 +658,6 @@ body.theme-scroll-lock--iphone {
  * module: themeEditorModules:layouts/header
  */
 @charset "UTF-8";
-:root {
-  --theme-keycolor: #00a0e6;
-  --theme-textcolor-on-keycolor: #eee;
-  --theme-subcolor: #00a0e6;
-  --theme-textcolor-on-subcolor: #eee;
-  --px2-font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", "Helvetica Neue", "Arial", sans-serif;
-  --px2-main-color: #00a0e6;
-  --px2-text-color: #333;
-  --px2-background-color: #f9f9f9;
-  --px2-border-color: #f0f0f0;
-}
 /**
  * Header
  */
@@ -741,8 +712,9 @@ body.theme-scroll-lock--iphone {
 .theme-header__si img {
   display: inline-block;
   height: 1.2em;
-  margin-right: 5px;
+  margin-right: 0.5em;
   vertical-align: top;
+  font-size: inherit;
 }
 @media (max-width: 740px) {
   .theme-header__si {

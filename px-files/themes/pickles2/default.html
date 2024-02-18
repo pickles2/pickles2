@@ -51,6 +51,7 @@
 </div>
 		</div>
 		<div class="theme-layouts__rnavi">
+			<div class="theme-layouts__rnavi-inner">
 <nav class="theme-common-navi">
 <?php
 	$category_top_id = $px->site()->get_category_top();
@@ -58,6 +59,7 @@
 	<p><a href="<?= htmlspecialchars( $px->href($category_top_id) ?? '' ) ?>"><?= htmlspecialchars($px->site()->get_page_info($category_top_id, 'title_label') ?? '') ?></a></p>
 <?= $theme->mk_sub_menu( $category_top_id ) ?>
 </nav>
+			</div>
 		</div>
 	</div>
 </div>
@@ -65,11 +67,16 @@
 	<div class="theme-layouts__body">
 		<div class="theme-layouts__content">
 <div class="theme-back-to-pagetop">
-	<p><a href="#pagetop">このページの先頭へ戻る</a></p>
+	<p><a href="#pagetop"><?php
+		if ($px->lang() == "ja") { ?>このページの先頭へ戻る<?php
+		} else { ?>Back to page top<?php
+		} ?></a></p>
 </div>
 <div class="theme-breadcrumb"><?= $theme->mk_breadcrumb() ?></div>
 		</div>
 		<div class="theme-layouts__rnavi">
+			<div class="theme-layouts__rnavi-inner">
+			</div>
 		</div>
 	</div>
 </div>
@@ -108,6 +115,9 @@
 	</div>
 	<div class="theme-hamburger-menu__body">
 		<div class="theme-hamburger-menu__body-inner">
+			<div class="theme-hamburger-menu__title">
+				<p><a href="<?= htmlspecialchars($px->href('')) ?>"><?= htmlspecialchars($px->conf()->name ?? '') ?></a></p>
+			</div>
 			<div class="theme-hamburger-menu__mega-menu">
 <?= $theme->mk_megafooter_menu() ?>
 			</div>
@@ -129,7 +139,10 @@
 	<div class="theme-back-to-pagetop-float__inner">
 		<a href="#pagetop" class="theme-back-to-pagetop-float__back-to-top">
 			<span class="theme-back-to-pagetop-float__back-to-top-inner">
-				<span class="theme-back-to-pagetop-float__back-to-top-decoration-a">このページの先頭へ戻る</span>
+				<span class="theme-back-to-pagetop-float__back-to-top-decoration-a"><?php
+					if ($px->lang() == "ja") { ?>このページの先頭へ戻る<?php
+					} else { ?>Back to page top<?php
+					} ?></span>
 			</span>
 		</a>
 	</div>
@@ -139,5 +152,6 @@
 		<script src="<?= htmlspecialchars( $theme->files('/modules.js') ); ?>"></script>
 <?= $px->bowl()->get_clean('foot'); ?>
 
+<?php include(__DIR__.'/inc/footsection.inc'); ?>
 	</body>
 </html>

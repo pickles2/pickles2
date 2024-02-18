@@ -22,6 +22,8 @@
 		<link rel="stylesheet" href="/common/px_resources/p/theme/pickles2/styles/theme.css">
 <style> /* Page List Generator */ .px2-blog-kit__pager{display:block;margin:1em 0}.px2-blog-kit__pager ul{display:flex;flex-wrap:wrap;justify-content:center;margin:0;padding:0}.px2-blog-kit__pager ul li{list-style-type:none;margin:0 2px;padding:0}.px2-blog-kit__pager a,.px2-blog-kit__pager span{border:1px solid transparent;border-radius:5px;display:block;line-height:1;padding:.7em 1em}.px2-blog-kit__pager a:hover,.px2-blog-kit__pager-current{background-color:var(--px2-main-color,#00a0e6);color:#f9f9f9}.px2-blog-kit__pager-current{font-weight:700}.px2-blog-kit__list{display:block;margin:1em 0}.px2-blog-kit__list:after{clear:both;content:"";display:block}.px2-blog-kit__list ul{border-top:1px solid #ddd;margin:0;padding:0}.px2-blog-kit__list ul li{border-bottom:1px solid #ddd;clear:both;list-style-type:none;margin:0;padding:1.2em 0}.px2-blog-kit__list ul li:after{clear:both;content:"";display:block}.px2-blog-kit__list-item{display:block}.px2-blog-kit__list-title{float:right;width:70%}.px2-blog-kit__list-title p{font-size:138%;font-weight:700;margin:0}.px2-blog-kit__list-release-date{color:#999;font-size:small}.px2-blog-kit__list-body{float:right;width:70%}.px2-blog-kit__list-link-to-article{text-align:right}.px2-blog-kit__list-thumb{float:left;height:auto;width:25%}.px2-blog-kit__list-thumb a{background-position:50%;background-size:cover;display:block;padding-top:70%}.px2-blog-kit__list-thumb a:hover{opacity:.9}.px2-blog-kit__list-a:before{border-color:var(--px2-main-color,#00a0e6);border-bottom-color:transparent;border-style:solid;border-top-color:transparent;border-width:.35em 0 .35em .6em;content:" ";display:inline-block;height:0;margin-right:.2em;width:0}
 </style>
+<link rel="stylesheet" href="/common/px_resources/p/theme/pickles2/layouts/top/style.css" />
+
 
 	</head>
 	<body id="pagetop">
@@ -29,7 +31,13 @@
 	<div class="theme-header__inner">
 		<div class="theme-header__si">
 			<h1>Pickles 2</h1>					</div>
+		<div class="theme-header__shouldernavi"></div>
 
+		<div class="theme-header__globalnavi"><ul>
+<li><a href="/about/">このブログについて</a></li>
+<li><a href="/articles/">記事一覧</a></li>
+</ul>
+</div>
 	</div>
 </header>
 <div class="theme-layouts">
@@ -37,23 +45,6 @@
 		<div class="theme-layouts__content">
 
 <div class="contents">
-<div class="px2-viewport-fit">
-	<div class="px2-viewport-fit__inner" style="padding-top:3rem; background-color: #f6f6f6; min-height: 380px; color: #00a0e6;">
-		<div class="px2-viewport-fit__contents">
-<div class="px2-p px2-text-align-center">
-<div class="px2-image px2-text-align-center px2-image--width-1of1 px2-p">
-<div class="px2-image__img">
-<img src="/index_files/resources/welcome.svg" alt="Welcome ! to Pickles 2" /></div>
-</div>
-<div class="px2-h2">
-<h2>ようこそ、 Pickles 2 の世界へ！</h2>
-</div>
-
-</div>
-
-		</div>
-	</div>
-</div>
 <div class="px2-float-media">
   <div class="px2-float-media__r1of3">
     <figure class="px2-embedded-media">
@@ -140,6 +131,9 @@
 	</div>
 	<div class="theme-hamburger-menu__body">
 		<div class="theme-hamburger-menu__body-inner">
+			<div class="theme-hamburger-menu__title">
+				<p><a href="/">Pickles 2</a></p>
+			</div>
 			<div class="theme-hamburger-menu__mega-menu">
 <ul>
 <li><a href="/about/">このブログについて</a></li>
@@ -164,5 +158,18 @@
 
 		<script src="/common/px_resources/p/theme/pickles2/modules.js"></script>
 
+		<script src="/common/px_resources/p/theme/pickles2/scripts/sidebarFix.js"></script>
+		<script>
+			window.addEventListener('load', function(){
+				// .sidebar-fix を固定します
+				if( $('.theme-layouts__rnavi-inner').length ){
+					sidebarFix('.theme-layouts__rnavi-inner', {
+						frame: $('.theme-layouts__rnavi'),
+						topBuffer: 10,
+						force: true
+					});
+				}
+			});
+		</script>
 	</body>
 </html>

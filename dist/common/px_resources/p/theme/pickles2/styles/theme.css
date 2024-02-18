@@ -1,3 +1,15 @@
+:root {
+  --theme-keycolor: #00a0e6;
+  --theme-textcolor-on-keycolor: #eee;
+  --theme-subcolor: #00a0e6;
+  --theme-textcolor-on-subcolor: #eee;
+  --theme-link-color: #00a0e6;
+  --px2-font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", "Helvetica Neue", "Arial", sans-serif;
+  --px2-main-color: #00a0e6;
+  --px2-text-color: #333;
+  --px2-background-color: #f9f9f9;
+  --px2-border-color: #f0f0f0;
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -30,15 +42,17 @@ code {
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
+h1 a, h1 code, h2 a, h2 code, h3 a, h3 code, h4 a, h4 code, h5 a, h5 code, h6 a, h6 code {
+  color: inherit;
+}
 h1 {
   font-size: 36px;
 }
 a {
-  color: var(--theme-keycolor);
-  text-decoration: none;
+  color: var(--theme-link-color);
 }
 a:hover {
-  text-decoration: underline;
+  opacity: 0.7;
 }
 p, ul, ol, dl {
   margin: 1em 0;
@@ -79,6 +93,9 @@ p, li, dt, dd {
   border-color: var(--px2-main-color, #00a0e6);
   border-top-color: transparent;
   border-bottom-color: transparent;
+}
+.px2-linklist a {
+  text-decoration: none;
 }
 .px2-modal .px2-modal__body-inner > .px2-form-input-list {
   margin-left: -20px;
