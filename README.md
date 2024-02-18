@@ -80,6 +80,10 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 
 ## 更新履歴 - Change log
 
+### pickles2/pickles2 v2.2.1 (リリース日未定)
+
+- モジュールを更新した。
+
 ### pickles2/pickles2 v2.2.0 (2023年9月24日)
 
 - デフォルトのテーマを更新。 `article` レイアウトに対応した。
@@ -107,7 +111,7 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 
 ## ライセンス - License
 
-Copyright (c)2001-2023 Tomoya Koyanagi, and Pickles Project<br />
+Copyright (c)2001-2024 Tomoya Koyanagi, and Pickles Project<br />
 MIT License https://opensource.org/licenses/mit-license.php
 
 
