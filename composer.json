@@ -42,5 +42,13 @@
     "autoload": {
         "files": [
         ]
+    },
+    "extra": {
+        "px2package": {
+            "name": "Pickles 2",
+            "type": "project",
+            "path": "src_px2/.px_execute.php",
+            "path_homedir": "px-files/"
+        }
     }
 }
