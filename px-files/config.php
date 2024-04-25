@@ -316,6 +316,7 @@ return call_user_func( function(){
 			'paths_ignore' => array(
 				'/caches/p/__console_resources/*',
 			),
+			'enable_cache_buster' => true,
 		) ),
 
 		// PX=px2dthelper
