@@ -82,6 +82,7 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 
 ### pickles2/pickles2 v2.3.0 (リリース日未定)
 
+- モジュールを更新した。
 - `.htaccess` の修正。
 - `composer.json` に `px2package` 情報を追加。
 - キャッシュバスターを有効に設定した。
