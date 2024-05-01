@@ -93,7 +93,7 @@ return call_user_func( function(){
 	 * コマンドのパスが通っていない場合は、絶対パスで設定してください。
 	 */
 	$conf->commands = new stdClass;
-	$conf->commands->php = ($_ENV['CMD_PHP'] ?? 'php');
+	$conf->commands->php = ($_ENV['CMD_PHP'] ?? PHP_BINARY);
 	$conf->commands->composer = ($_ENV['CMD_COMPOSER'] ?? 'composer');
 	$conf->commands->git = ($_ENV['CMD_GIT'] ?? 'git');
 
