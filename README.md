@@ -83,6 +83,7 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 ### pickles2/pickles2 v2.3.2 (リリース日未定)
 
 - モジュールを更新した。
+- 新しい 画像スライダーモジュール に対応した。
 
 ### pickles2/pickles2 v2.3.1 (2024年7月21日)
 

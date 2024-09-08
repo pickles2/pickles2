@@ -534,6 +534,17 @@ return call_user_func( function(){
 			),
 		),
 
+		// px2style__image-list フィールドを設定
+		'px2style__image-list' => array(
+			'filenameAutoSetter' => 'random', // random = 画像ファイル名をランダムに自動命名する。
+			'format' => array(
+				'maxWidth' => 1600,
+				'maxHeight' => 2400,
+				'mimeType' => 'image/webp',
+				'quality' => 0.5,
+			),
+		),
+
 	);
 
 	/** Broccoli: ファイルをドロップしたときのオペレータを登録 */

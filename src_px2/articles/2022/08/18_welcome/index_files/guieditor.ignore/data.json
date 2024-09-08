@@ -80,21 +80,95 @@
                         "dec": ""
                     },
                     {
-                        "modId": "px2style:basics/text",
+                        "modId": "px2style:medias/float",
                         "fields": {
-                            "main": {
-                                "src": "<p>気候変動、環境汚染、資源枯渇など、地球規模での問題が顕在化している現代において、個人や企業が環境に配慮した取り組みをすることがますます求められています。持続可能なライフスタイルは、自然環境の保護に貢献するだけでなく、エネルギーや資源の効率的な利用、健康増進など、さまざまなメリットをもたらします。</p>",
-                                "editor": ""
+                            "lr": {
+                                "src": "r"
                             },
-                            "text-align": {
+                            "image-size": {
+                                "src": "1of3"
+                            },
+                            "media": [
+                                {
+                                    "modId": "px2style:interactives/image-slider",
+                                    "fields": {
+                                        "image-list": {
+                                            "slides": [
+                                                {
+                                                    "path": "./index_files/resources/cgu9wiha3zpywre6-4ef41255405a0744c190115e8efb3e74.webp",
+                                                    "resKey": "d6b0595ad7e2ee1a94e33cbb912cd59b",
+                                                    "resType": "",
+                                                    "webUrl": "",
+                                                    "href": "",
+                                                    "captionTitle": "",
+                                                    "captionBody": ""
+                                                },
+                                                {
+                                                    "path": "./index_files/resources/9zbjp610i4smxg7x-5f0a145f50f38ec9ea0b40ca81d44248.webp",
+                                                    "resKey": "4d607b8dc2b61a5ad70f82160efca999",
+                                                    "resType": "",
+                                                    "webUrl": "",
+                                                    "href": "",
+                                                    "captionTitle": "",
+                                                    "captionBody": ""
+                                                },
+                                                {
+                                                    "path": "./index_files/resources/eyc5asz13egn2eyr-8dcaa835b4bd30d7e794dd78904f2d71.webp",
+                                                    "resKey": "b02631f59f279e562a4c38122dcdfa32",
+                                                    "resType": "",
+                                                    "webUrl": "",
+                                                    "href": "",
+                                                    "captionTitle": "",
+                                                    "captionBody": ""
+                                                }
+                                            ]
+                                        },
+                                        "is-loop": {
+                                            "src": "1"
+                                        },
+                                        "show-prevnext": {
+                                            "src": "1"
+                                        },
+                                        "show-slide-numbers": {
+                                            "src": "1"
+                                        }
+                                    },
+                                    "anchor": "",
+                                    "dec": "",
+                                    "locked": {
+                                        "contents": false,
+                                        "children": false,
+                                        "move": false,
+                                        "delete": false
+                                    }
+                                }
+                            ],
+                            "body_rect": {
                                 "src": ""
                             },
-                            "font-size": {
-                                "src": ""
-                            },
-                            "paragraph": {
-                                "src": "px2-p"
-                            }
+                            "main": [
+                                {
+                                    "modId": "px2style:basics/text",
+                                    "fields": {
+                                        "main": {
+                                            "src": "<p>気候変動、環境汚染、資源枯渇など、地球規模での問題が顕在化している現代において、個人や企業が環境に配慮した取り組みをすることがますます求められています。持続可能なライフスタイルは、自然環境の保護に貢献するだけでなく、エネルギーや資源の効率的な利用、健康増進など、さまざまなメリットをもたらします。</p>",
+                                            "editor": ""
+                                        },
+                                        "text-align": {
+                                            "src": ""
+                                        },
+                                        "font-size": {
+                                            "src": ""
+                                        },
+                                        "paragraph": {
+                                            "src": "px2-p"
+                                        }
+                                    },
+                                    "anchor": "",
+                                    "dec": ""
+                                }
+                            ],
+                            "heading": []
                         },
                         "anchor": "",
                         "dec": ""
