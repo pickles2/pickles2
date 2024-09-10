@@ -80,7 +80,7 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 
 ## 更新履歴 - Change log
 
-### pickles2/pickles2 v2.3.2 (リリース日未定)
+### pickles2/pickles2 v2.3.2 (2024年9月10日)
 
 - モジュールを更新した。
 - テーマを更新した。
