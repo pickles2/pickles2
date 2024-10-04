@@ -558,6 +558,9 @@ return call_user_func( function(){
 		'application/svg+xml' => $droppedImageOperator,
 	);
 
+	/** コンテンツテンプレート */
+	$conf->plugins->px2dt->path_contents_templates_dir = __DIR__."/contents_templates/";
+
 
 	// -------- Project Custom Setting --------
 	// プロジェクトが固有に定義する設定を行います。
