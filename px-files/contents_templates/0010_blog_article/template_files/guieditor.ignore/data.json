@@ -7,7 +7,12 @@
                     {
                         "modId": "px2style:basics/image",
                         "fields": {
-                            "image_src": [],
+                            "image_src": {
+                                "resKey": "",
+                                "path": "",
+                                "resType": "",
+                                "webUrl": ""
+                            },
                             "alt_text": {
                                 "src": ""
                             },
@@ -300,7 +305,10 @@
                                                 "modId": "px2style:basics/image",
                                                 "fields": {
                                                     "image_src": {
-                                                        "path": ""
+                                                        "resKey": "",
+                                                        "path": "",
+                                                        "resType": "",
+                                                        "webUrl": ""
                                                     },
                                                     "alt_text": "",
                                                     "caption": "",
@@ -346,7 +354,10 @@
                                                 "modId": "px2style:basics/image",
                                                 "fields": {
                                                     "image_src": {
-                                                        "path": ""
+                                                        "resKey": "",
+                                                        "path": "",
+                                                        "resType": "",
+                                                        "webUrl": ""
                                                     },
                                                     "alt_text": "",
                                                     "caption": "",
@@ -386,7 +397,10 @@
                                                 "modId": "px2style:basics/image",
                                                 "fields": {
                                                     "image_src": {
-                                                        "path": ""
+                                                        "resKey": "",
+                                                        "path": "",
+                                                        "resType": "",
+                                                        "webUrl": ""
                                                     },
                                                     "alt_text": "",
                                                     "caption": "",
@@ -426,7 +440,10 @@
                                                 "modId": "px2style:basics/image",
                                                 "fields": {
                                                     "image_src": {
-                                                        "path": ""
+                                                        "resKey": "",
+                                                        "path": "",
+                                                        "resType": "",
+                                                        "webUrl": ""
                                                     },
                                                     "alt_text": "",
                                                     "caption": "",
