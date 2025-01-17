@@ -83,6 +83,7 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 ### pickles2/pickles2 v2.4.0 (リリース日未定)
 
 - コンテンツテンプレートを追加した。
+- 依存パッケージのバージョンを更新。
 
 ### pickles2/pickles2 v2.3.2 (2024年9月10日)
 
