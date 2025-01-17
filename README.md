@@ -80,7 +80,7 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 
 ## 更新履歴 - Change log
 
-### pickles2/pickles2 v2.4.0 (リリース日未定)
+### pickles2/pickles2 v2.4.0 (2025年1月18日)
 
 - コンテンツテンプレートを追加した。
 - 依存パッケージのバージョンを更新。
@@ -136,7 +136,7 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 
 ## ライセンス - License
 
-Copyright (c)2001-2024 Tomoya Koyanagi, and Pickles Project<br />
+Copyright (c)2001-2025 Tomoya Koyanagi, and Pickles Project<br />
 MIT License https://opensource.org/licenses/mit-license.php
 
 
