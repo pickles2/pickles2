@@ -247,7 +247,7 @@ return call_user_func( function(){
 	 */
 	$conf->funcs->before_sitemap = array(
 		// px2-error-reporter
-		\tomk79\pickles2\px2ErrorReporter\register::register(array(
+		\pickles2\px2ErrorReporter\register::register(array(
 			"realpath_log_dir" => __DIR__.'/_sys/ram/data/',
 		)),
 
@@ -288,7 +288,7 @@ return call_user_func( function(){
 		)),
 
 		// px2-serve
-		\tomk79\pickles2\px2serve\serve::register(),
+		\pickles2\px2serve\serve::register(),
 
 	);
 
@@ -407,7 +407,7 @@ return call_user_func( function(){
 
 	$conf->funcs->processor->scss = array(
 		// SCSS文法を処理する
-		'tomk79\pickles2\px2scss\scss::processor',
+		'pickles2\px2scss\scss::processor',
 
 		// css のデフォルトの処理を追加
 		$conf->funcs->processor->css,
