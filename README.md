@@ -83,6 +83,7 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 ### pickles2/pickles2 v2.5.1 (リリース日未定)
 
 - モジュールを更新した。
+- テーマを更新した。
 - 依存パッケージのバージョンを更新。
 
 ### pickles2/pickles2 v2.5.0 (2025年2月12日)
