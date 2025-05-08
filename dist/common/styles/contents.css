@@ -3043,7 +3043,7 @@
   position: relative;
 }
 .contents .px2-viewport-fit__contents {
-  margin: 0;
+  margin: 0 auto;
 }
 .contents .px2-viewport-fit__contents--fluid {
   width: 100%;
