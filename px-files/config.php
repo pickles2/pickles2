@@ -234,7 +234,23 @@ return call_user_func( function(){
 	 */
 	$conf->allow_pxcommands = 1;
 
+	/**
+	 * 拡張サイトマップ項目定義
+	 */
+	$conf->custom_sitemap_definition = array(
+		'**delete_flg' => array(
+			'label' => '削除フラグ',
+			'lang' => array(
+				'en' => 'Delete Flag',
+			),
+			'type' => 'boolean',
+		),
+	);
 
+	/**
+	 * サイトマップキャッシュ生成時に一度にINSERTするページ数
+	 */
+	$conf->sitemap_cache_db_insert_unit_size = 20;
 
 	// -------- functions --------
 
