@@ -334,19 +334,17 @@
   box-sizing: border-box;
   display: table-cell;
   font-weight: 700;
-  max-width: 140px;
   padding: 1em 15px;
   vertical-align: top;
-  width: 140px;
+  width: 220px;
 }
 .contents .px2-form-input-list ul.px2-form-input-list__ul li.px2-form-input-list__li .px2-form-input-list__input {
   word-wrap: break-word;
   box-sizing: border-box;
   display: table-cell;
-  max-width: calc(100% - 140px);
   padding: 1em 15px;
   vertical-align: top;
-  width: calc(100% - 140px);
+  width: calc(100% - 220px);
 }
 .contents .px2-form-input-list ul.px2-form-input-list__ul li.px2-form-input-list__li .px2-form-input-list__input > :first-child {
   margin-top: 0;
@@ -365,7 +363,15 @@
   background-color: #fee7e7;
   color: #e11;
 }
-@container (max-width: 544px) {
+@container (max-width: calc(697px + 30px)) {
+  .contents .px2-form-input-list ul.px2-form-input-list__ul li.px2-form-input-list__li .px2-form-input-list__label {
+    width: 30%;
+  }
+  .contents .px2-form-input-list ul.px2-form-input-list__ul li.px2-form-input-list__li .px2-form-input-list__input {
+    width: 70%;
+  }
+}
+@container (max-width: calc(544px + 30px)) {
   .contents .px2-form-input-list ul.px2-form-input-list__ul, .contents .px2-form-input-list ul.px2-form-input-list__ul li.px2-form-input-list__li {
     display: block;
   }
@@ -1996,6 +2002,7 @@
   margin-top: 1em;
   margin-bottom: 1em;
   position: relative;
+  z-index: 1;
   container-type: inline-size;
 }
 .contents .px2-image-slider__contents {
@@ -2672,7 +2679,8 @@
   }
 }
 .contents .px2-vertical-list,
-.contents .px2-vertical-list > ul {
+.contents .px2-vertical-list > ul,
+.contents .px2-vertical-list > ol {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -2681,14 +2689,20 @@
   padding-left: 0;
 }
 .contents .px2-vertical-list > ul > li,
+.contents .px2-vertical-list > ol > li,
 .contents .px2-vertical-list > li,
 .contents .px2-vertical-list > ul > ul > li,
-.contents .px2-vertical-list > ul > li {
+.contents .px2-vertical-list > ul > ol > li,
+.contents .px2-vertical-list > ul > li,
+.contents .px2-vertical-list > ol > ul > li,
+.contents .px2-vertical-list > ol > ol > li,
+.contents .px2-vertical-list > ol > li {
   list-style-type: none;
   padding-left: 0;
 }
 .contents .px2-horizontal-list,
-.contents .px2-horizontal-list > ul {
+.contents .px2-horizontal-list > ul,
+.contents .px2-horizontal-list > ol {
   display: flex;
   flex-wrap: wrap;
   margin-top: 1em;
@@ -2697,9 +2711,14 @@
   gap: 5px;
 }
 .contents .px2-horizontal-list > ul > li,
+.contents .px2-horizontal-list > ol > li,
 .contents .px2-horizontal-list > li,
 .contents .px2-horizontal-list > ul > ul > li,
-.contents .px2-horizontal-list > ul > li {
+.contents .px2-horizontal-list > ul > ol > li,
+.contents .px2-horizontal-list > ul > li,
+.contents .px2-horizontal-list > ol > ul > li,
+.contents .px2-horizontal-list > ol > ol > li,
+.contents .px2-horizontal-list > ol > li {
   list-style-type: none;
   padding: 0;
   margin: 0 2px;
@@ -2714,24 +2733,35 @@
   justify-content: flex-end;
 }
 .contents .px2-note-list,
-.contents .px2-note-list > ul {
+.contents .px2-note-list > ul,
+.contents .px2-note-list > ol {
   margin-top: 1em;
   margin-bottom: 1em;
   padding-left: 1.5em;
 }
 .contents .px2-note-list > ul > li,
+.contents .px2-note-list > ol > li,
 .contents .px2-note-list > li,
 .contents .px2-note-list > ul > ul > li,
-.contents .px2-note-list > ul > li {
+.contents .px2-note-list > ul > ol > li,
+.contents .px2-note-list > ul > li,
+.contents .px2-note-list > ol > ul > li,
+.contents .px2-note-list > ol > ol > li,
+.contents .px2-note-list > ol > li {
   list-style-type: none;
   color: #999;
   font-size: 86%;
   position: relative;
 }
 .contents .px2-note-list > ul > li::before,
+.contents .px2-note-list > ol > li::before,
 .contents .px2-note-list > li::before,
 .contents .px2-note-list > ul > ul > li::before,
-.contents .px2-note-list > ul > li::before {
+.contents .px2-note-list > ul > ol > li::before,
+.contents .px2-note-list > ul > li::before,
+.contents .px2-note-list > ol > ul > li::before,
+.contents .px2-note-list > ol > ol > li::before,
+.contents .px2-note-list > ol > li::before {
   content: "※";
   position: absolute;
   left: -1.5em;

@@ -83,6 +83,7 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 ### pickles2/pickles2 v2.5.2 (リリース日未定)
 
 - コンフィグに、 「拡張サイトマップ項目定義」「サイトマップキャッシュ生成時に一度にINSERTするページ数」 を追加した。
+- モジュールを更新した。
 
 ### pickles2/pickles2 v2.5.1 (2025年5月9日)
 
