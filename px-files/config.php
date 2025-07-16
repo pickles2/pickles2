@@ -236,15 +236,21 @@ return call_user_func( function(){
 
 	/**
 	 * 拡張サイトマップ項目定義
+	 *
+	 * ```
+	 * // 設定例:
+	 * $conf->custom_sitemap_definition = array(
+	 * 	'custom_column_key' => array(
+	 * 		'label' => 'カスタムカラム',
+	 * 		'lang' => array(
+	 * 			'en' => 'Custom Column',
+	 * 		),
+	 * 		'type' => 'string',
+	 * 	),
+	 * );
+	 * ```
 	 */
 	$conf->custom_sitemap_definition = array(
-		'**delete_flg' => array(
-			'label' => '削除フラグ',
-			'lang' => array(
-				'en' => 'Delete Flag',
-			),
-			'type' => 'boolean',
-		),
 	);
 
 	/**
