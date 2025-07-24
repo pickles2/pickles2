@@ -413,10 +413,12 @@ return call_user_func( function(){
 
 	);
 
-	$conf->funcs->processor->css = array(
-	);
+	$conf->funcs->processor->kflow = array(
+		// kflow文法を処理する
+		'pickles2\px2kflow\kflow::processor',
 
-	$conf->funcs->processor->js = array(
+		// html のデフォルトの処理を追加
+		$conf->funcs->processor->html,
 	);
 
 	$conf->funcs->processor->md = array(
@@ -427,12 +429,18 @@ return call_user_func( function(){
 		$conf->funcs->processor->html,
 	);
 
+	$conf->funcs->processor->css = array(
+	);
+
 	$conf->funcs->processor->scss = array(
 		// SCSS文法を処理する
 		'pickles2\px2scss\scss::processor',
 
 		// css のデフォルトの処理を追加
 		$conf->funcs->processor->css,
+	);
+
+	$conf->funcs->processor->js = array(
 	);
 
 

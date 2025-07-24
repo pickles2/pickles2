@@ -80,10 +80,11 @@ $ php ./src_px2/.px_execute.php "/?PX=clearcache"
 
 ## 更新履歴 - Change log
 
-### pickles2/pickles2 v2.5.2 (リリース日未定)
+### pickles2/pickles2 v2.6.0 (リリース日未定)
 
 - コンフィグに、 「拡張サイトマップ項目定義」「サイトマップキャッシュ生成時に一度にINSERTするページ数」 を追加した。
 - サイトマップから、 削除フラグ `**delete_flg` 列を削除した。
+- Kaleflower形式のコンテンツに対応した。
 - モジュールを更新した。
 
 ### pickles2/pickles2 v2.5.1 (2025年5月9日)
